@@ -1,11 +1,18 @@
 import React from 'react'
+import SideBar from './SideBar';
+import {Paper} from '@material-ui/core';
 
 export default function Home() {
     return (
-        <div>
-            {/* the homepage before anything happens,  with helpful text in the center
-            explaining what to do, and how to use the program.
-             */}
-        </div>
+        <Paper className="home-container" square={true}>
+            <section classname="home-hero">
+            <SideBar />
+            
+
+            </section>
+        
+            
+           
+        </Paper>
     )
 }

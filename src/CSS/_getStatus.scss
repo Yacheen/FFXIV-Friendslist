@@ -1,0 +1,12 @@
+.status-button-container {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid black;
+  .status-button {
+    font-size: 1.4rem;
+    background: #039ae0;
+    color: white;
+  }
+}

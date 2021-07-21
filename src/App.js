@@ -2,6 +2,7 @@ import "./CSS/App.css";
 import NavBar from "./components/NavBar";
 import SideBar from './components/SideBar';
 import { ThemeProvider, createTheme } from "@material-ui/core";
+import Home from './components/Home';
 
 
 
@@ -17,7 +18,7 @@ function App() {
   
       },
       secondary: {
-        main: "#29b6f6",
+        main: "#039ae0",
         
   
       },
@@ -26,11 +27,12 @@ function App() {
     }
   })
   return (
-    <ThemeProvider theme={theme}>
-      <NavBar />
-      <SideBar />
-    </ThemeProvider>
-      
+      <div className="app-container">
+        <ThemeProvider theme={theme}>
+        <NavBar />  
+        </ThemeProvider>
+      </div>
+
   );
 }
 
