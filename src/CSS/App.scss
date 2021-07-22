@@ -2,6 +2,7 @@
 @import "./NavBar";
 @import "./SideBar";
 @import "./Home";
+@import "./Footer";
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +14,4 @@ body {
 }
 html {
   font-size: 62.5%;
-}
-
-.app-body {
-  display: flex;
 }

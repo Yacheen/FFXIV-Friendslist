@@ -1,8 +1,7 @@
 import "./CSS/App.css";
 import NavBar from "./components/NavBar";
-import SideBar from './components/SideBar';
 import { ThemeProvider, createTheme } from "@material-ui/core";
-import Home from './components/Home';
+import Footer from './components/Footer';
 
 
 
@@ -30,6 +29,7 @@ function App() {
       <div className="app-container">
         <ThemeProvider theme={theme}>
         <NavBar />  
+        <Footer />
         </ThemeProvider>
       </div>
 

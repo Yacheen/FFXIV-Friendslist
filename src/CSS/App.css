@@ -101,6 +101,70 @@
   margin: 0 auto;
 }
 
+.home-container {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-container .home-content-container {
+  width: 100%;
+}
+
+.home-container .home-content-container .home-content {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home-container .home-content-container .home-content .home-left-side {
+  min-height: 92vh;
+}
+
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content {
+  min-height: 100%;
+}
+
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-meta-information-container {
+  margin-bottom: 8rem;
+}
+
+.home-container .home-content-container .home-content .home-right-side {
+  min-height: 92vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container .char-model-container {
+  margin-right: 2rem;
+}
+
+.footer {
+  padding: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -112,11 +176,5 @@
 
 html {
   font-size: 62.5%;
-}
-
-.app-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 /*# sourceMappingURL=App.css.map */

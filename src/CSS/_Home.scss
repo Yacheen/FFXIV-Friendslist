@@ -1,3 +1,39 @@
 .home-container {
-  
-`}
+  margin: 0 auto;
+  display: flex;
+
+  .sidebar-container {
+  }
+
+  .home-content-container {
+    width: 100%;
+
+    .home-content {
+      max-width: 90%;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-between;
+      .home-left-side {
+        min-height: 92vh;
+        .home-left-side-content {
+          min-height: 100%;
+          .person-meta-information-container {
+            margin-bottom: 8rem;
+          }
+        }
+      }
+      .home-right-side {
+        min-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .char-model-and-gear-container {
+          display: flex;
+          .char-model-container {
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

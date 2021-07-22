@@ -7,7 +7,7 @@ import FriendsList from './FriendsList';
 export default function SideBar() {
     
     return (
-            <Paper elevation={2} square={true} className={` side-bar-container`}>
+            <Paper elevation={3} square={true} className={` side-bar-container`}>
                 <div className="side-bar-content">
                     <div className="get-status-button">
                         <Typography variant="h5" className="button-hint">
