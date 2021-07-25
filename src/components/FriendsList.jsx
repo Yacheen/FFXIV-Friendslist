@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -13,8 +13,9 @@ import EzmiPortrait from '../images/queenezmiportrait.jpg';
 import UhraPortrait from '../images/uhramoonportrait.jpg';
 import YassinPortrait from '../images/yassinaniviaportrait.jpg';
 import { ListItemIcon } from '@material-ui/core';
-
 import Avatar from '@material-ui/core/Avatar';
+
+export const SelectedIndexContext = createContext();
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,16 +26,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FriendsList() {
+export default function FriendsList(props) {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = React.useState(null);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
+    
   };
 
   return (
-    
+    <SelectedIndexContext.Provider value={[selectedIndex, setSelectedIndex]}>
+      
+      {props.children}
     <div className={classes.root}>
       <List component="nav" aria-label="main mailbox folders">
         
@@ -43,9 +47,9 @@ export default function FriendsList() {
           selected={selectedIndex === 0}
           onClick={(event) => handleListItemClick(event, 0)}
         >
-            <ListItemIcon>
+          <ListItemIcon>
             <Avatar src={RikkaPortrait} alt="Rikka Zadyo" />
-            </ListItemIcon>
+          </ListItemIcon>
           <ListItemText primary="Rikka Zadyo" />
         </ListItem>
         <Divider />
@@ -134,10 +138,10 @@ export default function FriendsList() {
         </ListItem>
         <Divider />
       </List>
-
-   
       {/* divider, probably add just a description or some other stuff here.*/}
-      
     </div>
+    
+
+    </SelectedIndexContext.Provider>
   );
 }

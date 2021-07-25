@@ -1,7 +1,9 @@
 .footer {
-  padding: 4rem;
+  padding: 4rem 0rem;
   position: relative;
   z-index: 5;
   .footer-content {
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
