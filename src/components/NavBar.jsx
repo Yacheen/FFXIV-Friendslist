@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Typography, makeStyles, Paper, useTheme, Button } from '@material-ui/core';
+import React from 'react'
+import { Typography, makeStyles, Paper, Button } from '@material-ui/core';
 import {
     BrowserRouter as Router,
     Link,
@@ -19,7 +19,9 @@ const useStyles = makeStyles({
 
 export default function NavBar() {
     const classes = useStyles();
+    
     return (
+        
         <Router>
             
             <Paper square={true} elevation={3} className={`${classes.root} nav-bar`}>
@@ -41,7 +43,9 @@ export default function NavBar() {
             </div>
         </Paper>
         <Switch>
+            
             <Route exact={true} path="/" component={Home} />
+            
    
         </Switch>
         </Router>

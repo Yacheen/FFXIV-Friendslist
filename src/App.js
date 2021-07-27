@@ -2,7 +2,6 @@ import "./CSS/App.css";
 import NavBar from "./components/NavBar";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import Footer from './components/Footer';
-import { SelectedIndexContext } from './components/FriendsList';
 
 
 
@@ -28,18 +27,14 @@ function App() {
   })
 
   return (
-        <SelectedIndexContext>
-          {value => {
-            return(
-              <div className="app-container">
-                <ThemeProvider theme={theme}>
-                <NavBar />  
-                <Footer />
-                </ThemeProvider>
-              </div>
-            )
-          }}    
-        </SelectedIndexContext>
+
+          <div className="app-container">
+            <ThemeProvider theme={theme}>
+              <NavBar />  
+              <Footer />
+            </ThemeProvider>
+          </div>
+ 
   );
 }
 

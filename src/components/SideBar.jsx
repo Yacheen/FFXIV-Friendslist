@@ -1,10 +1,9 @@
-import React from 'react'
+import React, {useEffect, useCallback} from 'react'
 import { Paper, Typography } from '@material-ui/core'
 import GetStatusButton from './GetStatusButton';
 import FriendsList from './FriendsList';
 
-
-export default function SideBar() {
+export default function SideBar(props) {
     
     return (
             <Paper elevation={3} square={true} className={` side-bar-container`}>
@@ -13,11 +12,16 @@ export default function SideBar() {
                         <Typography variant="h5" className="button-hint">
                             Choose a player below, and click on the button below to see their stats!
                         </Typography>
-                        <GetStatusButton />   
+                        <GetStatusButton
+                          
+                          FFXIVData={props.FFXIVData}
+                          setFFXIVData={props.setFFXIVData}
+                          selectedIndex={props.selectedIndex}
+                          />   
                     </div>
 
                     <div className="friends-list">
-                        <FriendsList />
+                        <FriendsList raidGroupIdentities={props.raidGroupIdentities}  selectedIndex={props.selectedIndex} setSelectedIndex={props.setSelectedIndex}/>
                     </div>
                 </div>
             </Paper>
