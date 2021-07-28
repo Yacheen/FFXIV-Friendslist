@@ -23,7 +23,7 @@
         }
       }
       .home-right-side {
-        min-height: 92vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -31,6 +31,11 @@
           display: flex;
           .char-model-container {
             margin-right: 2rem;
+            max-height: 92vh;
+
+            .char-model {
+              max-height: 90%;
+            }
           }
         }
       }

@@ -1,14 +1,15 @@
-import React, {useEffect, useRef, useCallback, useState} from 'react'
+import React, { useState } from 'react'
 import SideBar from './SideBar';
 import {Paper} from '@material-ui/core';
 import PersonMetaInformation from './PersonMetaInformation'
 import PersonData from './PersonData';
 import CharacterModel from './CharacterModel';
+import GearList from './GearList';
 
 export default function Home() {
     
-    const [selectedIndex, setSelectedIndex] = React.useState(null);
-    const [FFXIVData, setFFXIVData] = React.useState(null);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [FFXIVData, setFFXIVData] = useState();
     const raidGroupIdentities = {
         rikkasId: 30071260,
         lirasId: 24633600,
@@ -43,10 +44,10 @@ export default function Home() {
                     <div className="home-left-side">
                         <div className="home-left-side-content">
                             <div className="person-meta-information-container">
-                                <PersonMetaInformation />
+                                <PersonMetaInformation FFXIVData={FFXIVData}/>
                             </div>
                             <div className="person-data-container">
-                                <PersonData />
+                                <PersonData FFXIVData={FFXIVData} />
                             </div>
                         </div>
                     </div>
@@ -54,8 +55,8 @@ export default function Home() {
                     {/* right side of main content*/}
                     <div className="home-right-side">
                         <div className="char-model-and-gear-container">
-                            <div className="char-model-container"><h1>sample text</h1><CharacterModel /></div>
-                            <div className="char-gear-container"> sample text</div>
+                            <CharacterModel FFXIVData={FFXIVData} />
+                            <GearList FFXIVData={FFXIVData}/>
                         </div>
                         <div className="char-stats-container">
                             sample text

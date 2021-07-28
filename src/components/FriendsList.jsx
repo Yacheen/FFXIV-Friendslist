@@ -29,9 +29,9 @@ export default function FriendsList(props) {
   const classes = useStyles();
   const handleListItemClick = (event, index) => {
     props.setSelectedIndex(index);
-    console.log(index);
+    props.setSelectedButton(false);
     
-
+    
   };
   
   

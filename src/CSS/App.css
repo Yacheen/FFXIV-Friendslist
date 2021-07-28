@@ -136,7 +136,7 @@
 }
 
 .home-container .home-content-container .home-content .home-right-side {
-  min-height: 92vh;
+  min-height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,6 +157,11 @@
 
 .home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container .char-model-container {
   margin-right: 2rem;
+  max-height: 92vh;
+}
+
+.home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container .char-model-container .char-model {
+  max-height: 90%;
 }
 
 .footer {
