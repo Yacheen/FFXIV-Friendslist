@@ -34,16 +34,20 @@ export default function Stats(props) {
                             </TableRow>
                         </TableHead>
                         <TableBody>
+                        {console.log(props.FFXIVData.Character.GearSet.Attributes)}
                             {
-                            Object.values(props.FFXIVData.Character.GearSet.Attributes).map((attributeInfo) => {
+                            
+                            Object.values(props.FFXIVData.Character.GearSet.Attributes).map((attributeInfo, index) => {
+                                Object.values(attributeInfo).map(key => {
                                     return(
-                                        <TableRow key={attributeInfo.Attributes.Name}>
+                                        <TableRow key={key.Attribute.Name}>
                                             <TableCell component="th" scope="row">
-                                                {attributeInfo.Value}
+                                                {key.Value}
                                             </TableCell>
                                         </TableRow>
-                                    )
-                                })
+                                    );
+                                });   
+                            })
                             }
                         </TableBody>
                     </Table>
