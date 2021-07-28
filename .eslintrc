@@ -6,13 +6,7 @@
         "es6": true,
         "browser": true
     },
-    "extends": [
-        "airbnb",
-        "airbnb/hooks",
-        "plugin:prettier/recommended",
-        "plugin:react-perf/recommended"
-    ],
-    "plugins": ["react"],
+    "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": [
           "error",
@@ -20,11 +14,11 @@
             "endOfLine": "auto",
           }
         ],
-        "semi-style":"off",
+        "semi-style":"error",
         "arrow-parens":"warn",
-        "react/prop-types": "off",
+        "react/prop-types": "error",
         "react/jsx-key": "error",
-        "import/prefer-default-export": "off",
+        "import/prefer-default-export": "error",
         "space-in-parens":"error",
         "import/exports-last": "error",
         "import/order": [
@@ -46,5 +40,12 @@
         "semi":"error",
         "newline-per-chained-call":"error",
         "newline-after-var":"error"
-    }
+    },
+    "extends": [
+      "airbnb",
+      "airbnb/hooks",
+      "plugin:react-perf/recommended",
+      "plugin:prettier/recommended",
+      "prettier"
+    ]
 }
