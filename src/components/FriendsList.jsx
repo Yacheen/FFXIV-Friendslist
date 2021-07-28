@@ -4,14 +4,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import RikkaPortrait from '../images/rikkazadyoportrait.png';
-import MitsuPortrait from '../images/mitsuakiyamaportrait.jpg';
-import KyaryPortrait from '../images/kyaryvalentineportrait.jpg';
-import LiraPortrait from '../images/lirazadyoportrait.jpg';
-import BraxtonPortrait from '../images/braxtonhiggsportrait.jpg';
-import EzmiPortrait from '../images/queenezmiportrait.jpg';
-import UhraPortrait from '../images/uhramoonportrait.jpg';
-import YassinPortrait from '../images/yassinaniviaportrait.jpg';
 import { ListItemIcon } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
 
@@ -47,7 +39,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.rikkasId)}
         >
           <ListItemIcon>
-            <Avatar src={RikkaPortrait} alt="Rikka Zadyo" />
+            <Avatar src="/Images/Portraits/rikkazadyo.png" alt="Rikka Zadyo" />
           </ListItemIcon>
           <ListItemText primary="Rikka Zadyo" />
         </ListItem>
@@ -59,7 +51,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.mitsusId)}
         >
           <ListItemIcon>
-            <Avatar src={MitsuPortrait} alt="Mitsu Akiyama" />
+            <Avatar src="/Images/Portraits/mitsuakiyama.jpg" alt="Mitsu Akiyama" />
           </ListItemIcon>
           <ListItemText primary="Mitsu Akiyama" />
         </ListItem>
@@ -71,7 +63,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.kyarysId)}
         >
             <ListItemIcon>
-            <Avatar src={KyaryPortrait} alt="Kyary Valentine" />
+            <Avatar src="/Images/Portraits/kyaryvalentine.jpg" alt="Kyary Valentine" />
             </ListItemIcon>
           <ListItemText primary="Kyary Valentine" />
         </ListItem>
@@ -83,7 +75,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.lirasId)}
         >
             <ListItemIcon>
-            <Avatar src={LiraPortrait} alt="Lira Zadyo" />
+            <Avatar src="/Images/Portraits/lirazadyo.jpg" alt="Lira Zadyo" />
             </ListItemIcon>
           <ListItemText primary="Lira Zadyo" />
         </ListItem>
@@ -95,7 +87,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.braxtonsId)}
         >
             <ListItemIcon>
-            <Avatar src={BraxtonPortrait} alt="Braxton Higgs" />
+            <Avatar src="/Images/Portraits/braxtonhiggs.jpg" alt="Braxton Higgs" />
             </ListItemIcon>
           <ListItemText primary="Braxton Higgs" />
         </ListItem>
@@ -107,7 +99,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.ezmisId)}
         >
             <ListItemIcon>
-            <Avatar src={EzmiPortrait} alt="Queen Ezmi" />
+            <Avatar src="/Images/Portraits/queenezmi.jpg" alt="Queen Ezmi" />
             </ListItemIcon>
           <ListItemText primary="Queen Ezmi" />
         </ListItem>
@@ -119,7 +111,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.uhrasId)}
         >
             <ListItemIcon>
-            <Avatar src={UhraPortrait} alt="Uhra Moon" />
+            <Avatar src="/Images/Portraits/uhramoon.jpg" alt="Uhra Moon" />
             </ListItemIcon>
           <ListItemText primary="Uhra Moon" />
         </ListItem>
@@ -131,7 +123,7 @@ export default function FriendsList(props) {
           onClick={(event) => handleListItemClick(event, props.raidGroupIdentities.yassinsId)}
         >
             <ListItemIcon>
-            <Avatar src={YassinPortrait} alt="Yassin Anivia" />
+            <Avatar src="/Images/Portraits/yassinanivia.jpg" alt="Yassin Anivia" />
             </ListItemIcon>
           <ListItemText primary="Yassin Anivia" />
         </ListItem>
