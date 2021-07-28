@@ -5,6 +5,7 @@ import PersonMetaInformation from './PersonMetaInformation'
 import PersonData from './PersonData';
 import CharacterModel from './CharacterModel';
 import GearList from './GearList';
+import Stats from './Stats';
 
 export default function Home() {
     
@@ -57,9 +58,10 @@ export default function Home() {
                         <div className="char-model-and-gear-container">
                             <CharacterModel FFXIVData={FFXIVData} />
                             <GearList FFXIVData={FFXIVData}/>
+                            
                         </div>
                         <div className="char-stats-container">
-                            sample text
+                        <Stats FFXIVData={FFXIVData}/>
                         </div>
                     </div>
                 </div>

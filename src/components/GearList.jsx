@@ -22,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
 export default function GearList(props) {
   const classes = useStyles();
 
-  
-  
-
   if(props.FFXIVData) {
       return(
         <List className={classes.root}>
