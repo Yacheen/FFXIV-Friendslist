@@ -41,7 +41,14 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react-perf": "^3.3.0",
     "file-loader": "^6.2.0",
+    "prettier": "^2.3.2",
     "url-loader": "^4.1.1"
   }
 }

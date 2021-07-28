@@ -1,0 +1,50 @@
+{
+    "globals": {
+        "React": "writable"
+    },
+    "env": {
+        "es6": true
+    },
+    "extends": [
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:prettier/recommended",
+        "plugin:react-perf/recommended"
+    ],
+    "plugins": ["react"],
+    "rules": {
+        "semi-style":"error",
+        "arrow-parens":"warn",
+        "react/prop-types": "off",
+        "react/jsx-key": "error",
+        "import/prefer-default-export": "off",
+        "space-in-parens":"error",
+        "import/exports-last": "error",
+        "import/order": [
+        "error",
+        {
+            "newlines-between": "always",
+            "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+            },
+            "groups": [
+            ["builtin", "external"],
+            ["internal", "parent"],
+            ["sibling", "index"]
+            ]
+        }
+        ],
+        "newline-before-return": "error",
+        "padding-line-between-statements": [
+        "error",
+        { "blankLine": "always", "prev": "", "next": ["class", "function"] },
+        { "blankLine": "always", "prev": ["class", "function"], "next": "" },
+        { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+        { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] }
+        ],
+        "semi":"error",
+        "newline-per-chained-call":"error",
+        "newline-after-var":"error"
+    }
+}
