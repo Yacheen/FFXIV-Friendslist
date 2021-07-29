@@ -1,10 +1,8 @@
-import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import React from 'react';
 
 export default function CharacterModel(props) {
 	if (props.FFXIVData) {
-		console.log(props.FFXIVData);
-
 		return (
 			<div className="char-model-container">
 				<img
@@ -14,13 +12,13 @@ export default function CharacterModel(props) {
 				/>
 			</div>
 		);
-	} else {
-		return (
-			<div className="char-model-container">
-				<Typography variant="h3">Select someone to get started!</Typography>
-			</div>
-		);
 	}
+
+	return (
+		<div className="char-model-container">
+			<Typography variant="h3">Select someone to get started!</Typography>
+		</div>
+	);
 }
 
 

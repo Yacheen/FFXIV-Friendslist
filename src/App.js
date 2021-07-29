@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-filename-extension */
 import "./CSS/App.css";
-import NavBar from "./components/NavBar";
 import { ThemeProvider, createTheme } from '@material-ui/core';
+
 import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
 function App() {
 	const theme = createTheme({

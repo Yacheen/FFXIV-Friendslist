@@ -1,11 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
+
+import { ListItemIcon } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import { ListItemIcon } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -15,11 +17,17 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-export default function FriendsList(props) {
+export default function FriendsList({
+	setSelectedIndex,
+	setSelectedButton,
+	selectedIndex,
+	raidGroupIdentities,
+}) {
 	const classes = useStyles();
 	const handleListItemClick = (event, index) => {
-		props.setSelectedIndex(index);
-		props.setSelectedButton(false);
+		setSelectedIndex(index);
+		console.log(index);
+		setSelectedButton(false);
 	};
 
 	return (
@@ -27,8 +35,8 @@ export default function FriendsList(props) {
 			<List component="nav" aria-label="main mailbox folders">
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.rikkasId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.rikkasId)}
+					selected={selectedIndex === raidGroupIdentities.rikkasId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.rikkasId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/rikkazadyo.png" alt="Rikka Zadyo" />
@@ -39,8 +47,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.mitsusId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.mitsusId)}
+					selected={selectedIndex === raidGroupIdentities.mitsusId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.mitsusId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/mitsuakiyama.jpg" alt="Mitsu Akiyama" />
@@ -51,8 +59,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.kyarysId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.kyarysId)}
+					selected={selectedIndex === raidGroupIdentities.kyarysId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.kyarysId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/kyaryvalentine.jpg" alt="Kyary Valentine" />
@@ -63,8 +71,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.lirassId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.lirasId)}
+					selected={selectedIndex === raidGroupIdentities.lirasId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.lirasId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/lirazadyo.jpg" alt="Lira Zadyo" />
@@ -75,8 +83,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.braxtonsId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.braxtonsId)}
+					selected={selectedIndex === raidGroupIdentities.braxtonsId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.braxtonsId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/braxtonhiggs.jpg" alt="Braxton Higgs" />
@@ -87,8 +95,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.ezmisId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.ezmisId)}
+					selected={selectedIndex === raidGroupIdentities.ezmisId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.ezmisId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/queenezmi.jpg" alt="Queen Ezmi" />
@@ -99,8 +107,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.uhrassId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.uhrasId)}
+					selected={selectedIndex === raidGroupIdentities.uhrasId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.uhrasId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/uhramoon.jpg" alt="Uhra Moon" />
@@ -111,8 +119,8 @@ export default function FriendsList(props) {
 
 				<ListItem
 					button
-					selected={props.selectedIndex === props.raidGroupIdentities.yassinsId}
-					onClick={event => handleListItemClick(event, props.raidGroupIdentities.yassinsId)}
+					selected={selectedIndex === raidGroupIdentities.yassinsId}
+					onClick={event => handleListItemClick(event, raidGroupIdentities.yassinsId)}
 				>
 					<ListItemIcon>
 						<Avatar src="/Images/Portraits/yassinanivia.jpg" alt="Yassin Anivia" />
@@ -121,7 +129,7 @@ export default function FriendsList(props) {
 				</ListItem>
 				<Divider />
 			</List>
-			{/* divider, probably add just a description or some other stuff here.*/}
+			{/* divider, probably add just a description or some other stuff here. */}
 		</div>
 	);
 }

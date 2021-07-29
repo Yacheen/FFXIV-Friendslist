@@ -1,4 +1,3 @@
-import React from 'react'
 import {
 	Typography,
 	Table,
@@ -10,6 +9,7 @@ import {
 	Paper,
 	makeStyles,
 } from '@material-ui/core';
+import React from 'react';
 
 const useStyles = makeStyles({
 	table: {
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 
 export default function Stats(props) {
 	const classes = useStyles();
+
 	if (props.FFXIVData) {
 		return (
 			<div className="char-stats-content">
@@ -30,30 +31,27 @@ export default function Stats(props) {
 							</TableRow>
 						</TableHead>
 						<TableBody>
-							{console.log(props.FFXIVData.Character.GearSet.Attributes)}
-							{Object.values(props.FFXIVData.Character.GearSet.Attributes).map(
-								(attributeInfo, index) => {
-									Object.values(attributeInfo).map(key => {
-										return (
-											<TableRow key={key.Attribute.Name}>
-												<TableCell component="th" scope="row">
-													{key.Value}
-												</TableCell>
-											</TableRow>
-										);
-									});
-								},
-							)}
+							{Object.values(props.FFXIVData.Character.GearSet.Attributes).map(attributeInfo => {
+								return Object.values(attributeInfo).map(key => {
+									return (
+										<TableRow key={key.Attribute.Name}>
+											<TableCell component="th" scope="row">
+												{key.Value}
+											</TableCell>
+										</TableRow>
+									);
+								});
+							})}
 						</TableBody>
 					</Table>
 				</TableContainer>
 			</div>
 		);
-	} else {
-		return (
-			<div className="char-stats-content">
-				<Typography variant="h3">No stats to show yet..</Typography>
-			</div>
-		);
 	}
+
+	return (
+		<div className="char-stats-content">
+			<Typography variant="h3">No stats to show yet..</Typography>
+		</div>
+	);
 }

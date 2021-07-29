@@ -1,13 +1,20 @@
-import React, {useState} from 'react'
-import { Paper, Typography } from '@material-ui/core'
-import GetStatusButton from './GetStatusButton';
-import FriendsList from './FriendsList';
+import { Paper, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
 
-export default function SideBar(props) {
+import FriendsList from './FriendsList';
+import GetStatusButton from './GetStatusButton';
+
+export default function SideBar({
+	FFXIVData,
+	setFFXIVData,
+	selectedIndex,
+	raidGroupIdentities,
+	setSelectedIndex,
+}) {
 	const [selectedButton, setSelectedButton] = useState(true);
 
 	return (
-		<Paper elevation={3} square={true} className={` side-bar-container`}>
+		<Paper elevation={3} square className={` side-bar-container`}>
 			<div className="side-bar-content">
 				<div className="get-status-button">
 					<Typography variant="h5" className="button-hint">
@@ -16,9 +23,9 @@ export default function SideBar(props) {
 					<GetStatusButton
 						selectedButton={selectedButton}
 						setSelectedButton={setSelectedButton}
-						FFXIVData={props.FFXIVData}
-						setFFXIVData={props.setFFXIVData}
-						selectedIndex={props.selectedIndex}
+						FFXIVData={FFXIVData}
+						setFFXIVData={setFFXIVData}
+						selectedIndex={selectedIndex}
 					/>
 				</div>
 
@@ -26,9 +33,9 @@ export default function SideBar(props) {
 					<FriendsList
 						selectedButton={selectedButton}
 						setSelectedButton={setSelectedButton}
-						raidGroupIdentities={props.raidGroupIdentities}
-						selectedIndex={props.selectedIndex}
-						setSelectedIndex={props.setSelectedIndex}
+						raidGroupIdentities={raidGroupIdentities}
+						selectedIndex={selectedIndex}
+						setSelectedIndex={setSelectedIndex}
 					/>
 				</div>
 			</div>

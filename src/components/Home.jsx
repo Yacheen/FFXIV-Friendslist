@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
-import SideBar from './SideBar';
+
 import { Paper } from '@material-ui/core';
-import PersonMetaInformation from './PersonMetaInformation';
-import PersonData from './PersonData';
+import React, { useState } from 'react';
+
 import CharacterModel from './CharacterModel';
 import GearList from './GearList';
+import PersonData from './PersonData';
+import PersonMetaInformation from './PersonMetaInformation';
+import SideBar from './SideBar';
 import Stats from './Stats';
 
 export default function Home() {
 	const [selectedIndex, setSelectedIndex] = useState(0);
-	const [FFXIVData, setFFXIVData] = useState();
+	const [FFXIVData, setFFXIVData] = useState(undefined);
 	const raidGroupIdentities = {
 		rikkasId: 30071260,
 		lirasId: 24633600,
@@ -23,16 +25,16 @@ export default function Home() {
 
 	return (
 		<>
-			{/*sidebar*/}
+			{/* sidebar */}
 
-			<Paper className="home-container" square={true}>
+			<Paper className="home-container" square>
 				<div className="sidebar-container">
 					<SideBar
 						FFXIVData={FFXIVData}
 						setFFXIVData={setFFXIVData}
-						raidGroupIdentities={raidGroupIdentities}
 						selectedIndex={selectedIndex}
 						setSelectedIndex={setSelectedIndex}
+						raidGroupIdentities={raidGroupIdentities}
 					/>
 				</div>
 				{/* main content */}
@@ -51,7 +53,7 @@ export default function Home() {
 							</div>
 						</div>
 
-						{/* right side of main content*/}
+						{/* right side of main content */}
 						<div className="home-right-side">
 							<div className="char-model-and-gear-container">
 								<CharacterModel FFXIVData={FFXIVData} />

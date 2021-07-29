@@ -1,8 +1,9 @@
-import React from 'react'
 import { Typography, makeStyles, Paper, Button } from '@material-ui/core';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import ForumIcon from '@material-ui/icons/Forum';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import React from 'react';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+
 import Home from './Home';
 
 const useStyles = makeStyles({
@@ -16,7 +17,7 @@ export default function NavBar() {
 
 	return (
 		<Router>
-			<Paper square={true} elevation={3} className={`${classes.root} nav-bar`}>
+			<Paper square elevation={3} className={`${classes.root} nav-bar`}>
 				<div className="nav-bar-content">
 					<Link to="/">
 						<div className="nav-header">
@@ -39,7 +40,7 @@ export default function NavBar() {
 				</div>
 			</Paper>
 			<Switch>
-				<Route exact={true} path="/" component={Home} />
+				<Route exact path="/" component={Home} />
 			</Switch>
 		</Router>
 	);
