@@ -1,7 +1,8 @@
+import { Container } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-// import ListItemText from '@material-ui/core/ListItemText';
+import ListItemText from '@material-ui/core/ListItemText';
 // import Avatar from '@material-ui/core/Avatar';
 // import ImageIcon from '@material-ui/icons/Image';
 // import WorkIcon from '@material-ui/icons/Work';
@@ -14,8 +15,9 @@ import React from 'react';
 const useStyles = makeStyles(theme => ({
 	root: {
 		width: '100%',
-		maxWidth: 360,
+		maxWidth: 300,
 		backgroundColor: theme.palette.background.paper,
+		
 	},
 }));
 
@@ -24,13 +26,14 @@ export default function GearList({ FFXIVData }) {
 
 	if (FFXIVData) {
 		return (
-			<List className={classes.root}>
-				{Object.values(FFXIVData.Character.GearSet.Gear).map(gearPiece => {
+			<List className={`${classes.root}`}>
+				{Object.values(FFXIVData.Character.GearSet.Gear).map((gearPiece, index) => {
 					return (
-						<ListItem key={gearPiece.id}>
+						<ListItem key={index} disableGutters={true} dense={true} divider={true}>
 							<ListItemAvatar>
 								<img src={`https://xivapi.com${gearPiece.Item.Icon}`} alt="Gear Piece" />
 							</ListItemAvatar>
+							<ListItemText primary={gearPiece.Item.Name}  secondary={`Item Level ${gearPiece.Item.LevelItem}`} />
 						</ListItem>
 					);
 				})}
