@@ -1,78 +1,95 @@
 .home-container {
-  margin: 0 auto;
-  display: flex;
+    margin: 0 auto;
+    display: flex;
 
-  .sidebar-container {
-  }
-
-  .home-content-container {
-    min-width: 80%;
-
-    .home-content {
-      max-width: 90%;
-      margin: 2rem auto;
-      display: flex;
-      justify-content: space-between;
-      .home-left-side {
-        height: 92vh;
-        .home-left-side-content {
-          min-height: 100%;
-          .person-meta-information-container {
-            margin-bottom: 8rem;
-          }
-        }
-      }
-      .home-right-side {
-        max-height: 92vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        .char-model-and-gear-container {
-          min-height: 80%;
-          display: flex;
-          justify-content: flex-end;
-          .char-model-container {
-            margin-right: 2rem;
-            max-height: 90rem;
-
-            .char-model {
-              object-fit: cover;
-              max-height: 90%;
-            }
-          }
-        }
-
-        //maybe add an accenting background color
-        .char-stats-container {
-          display: flex;
-          justify-content: center;
-          .char-stats-content {
-            display: flex;
-            flex-direction: column;
-            max-width: 65%;
-
-            .char-stats-attributes {
-              display: flex;
-              justify-content: center;
-            }
-            .char-stats-name-and-value-container {
-              .char-stats-name-and-value {
-                display: inline-block;
-                padding: 1rem;
-
-                .char-stats-name {
-                  display: flex;
-                  justify-content: center;
-                }
-                .char-stats-value {
-                  display: flex;
-                  justify-content: center;
-                }
-              }
-            }
-          }
-        }
-      }
+    .sidebar-container {
     }
-  }
+
+    .home-content-container {
+        min-width: 80%;
+
+        .home-content {
+            max-width: 90%;
+            margin: 2rem auto;
+            display: flex;
+            justify-content: space-between;
+            .home-left-side {
+                height: 92vh;
+                .home-left-side-content {
+                    min-height: 100%;
+                    .person-meta-information-container {
+                        margin-bottom: 8rem;
+                        .meta-info-top {
+                            display: flex;
+                            flex-direction: column;
+                            .job-info {
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            img {
+                                max-width: 10%;
+                            }
+                        }
+                        .meta-info-bottom {
+                            display: flex;
+                            justify-content: space-evenly;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+            .home-right-side {
+                max-height: 82vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .char-model-and-gear-container {
+                    max-height: 70rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    .char-model-container {
+                        margin-right: 2rem;
+                        max-height: 76rem;
+
+                        .char-model {
+                            object-fit: cover;
+                            max-height: 100%;
+                        }
+                    }
+                }
+
+                //maybe add an accenting background color
+                .char-stats-container {
+                    display: flex;
+                    justify-content: center;
+                    .char-stats-content {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 100%;
+
+                        .char-stats-attributes {
+                            display: flex;
+                            justify-content: center;
+                        }
+                        .char-stats-name-and-value-container {
+                            .char-stats-name-and-value {
+                                display: inline-block;
+                                padding: 1rem;
+
+                                .char-stats-name {
+                                    display: flex;
+                                    justify-content: center;
+                                }
+                                .char-stats-value {
+                                    display: flex;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
