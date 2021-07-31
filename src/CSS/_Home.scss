@@ -9,8 +9,8 @@
         min-width: 80%;
 
         .home-content {
-            max-width: 90%;
-            margin: 2rem auto;
+            max-width: 95%;
+            margin: 2rem 0 2rem auto;
             display: flex;
             justify-content: space-between;
             .home-left-side {
@@ -25,10 +25,12 @@
                             .job-info {
                                 display: flex;
                                 align-items: center;
-                            }
 
-                            img {
-                                max-width: 10%;
+                                img {
+                                    display: inline;
+                                    width: 3rem;
+                                    height: 3rem;
+                                }
                             }
                         }
                         .meta-info-bottom {
@@ -45,9 +47,10 @@
                 flex-direction: column;
                 justify-content: space-between;
                 .char-model-and-gear-container {
-                    max-height: 70rem;
+                    max-height: 80%;
                     display: flex;
                     justify-content: flex-end;
+
                     .char-model-container {
                         margin-right: 2rem;
                         max-height: 76rem;

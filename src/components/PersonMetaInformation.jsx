@@ -30,6 +30,9 @@ const useStyles = makeStyles({
 
 export default function PersonMetaInformation({ FFXIVData }) {
     const classes = useStyles();
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
 
     if (FFXIVData) {
         return (
@@ -38,16 +41,20 @@ export default function PersonMetaInformation({ FFXIVData }) {
                     <Typography noWrap={true} variant="h3" color="primary">
                         {FFXIVData.Character.Name}
                     </Typography>
-                    <Typography noWrap={true} variant="h4">
-                        Race: {FFXIVData.Character.Race.Name}
-                    </Typography>
                     <Typography className="job-info" noWrap={true} variant="h4">
-                        Class: {FFXIVData.Character.ActiveClassJob.Job.Name}
+                        Class:{" "}
+                        {capitalizeFirstLetter(
+                            FFXIVData.Character.ActiveClassJob.Job.Name
+                        )}
                         <img
                             src={`https://xivapi.com${FFXIVData.Character.ActiveClassJob.Job.Icon}`}
                             alt={`class icon`}
                         />
                     </Typography>
+                    <Typography noWrap={true} variant="h4">
+                        Race: {FFXIVData.Character.Race.Name}
+                    </Typography>
+
                     <Typography variant="h4">
                         Server: {FFXIVData.Character.Server}
                     </Typography>
