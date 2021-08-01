@@ -12,14 +12,14 @@ export default function GetStatusButton({
 
     const fetchFFXIVApi = async () => {
         setIsLoading(true);
+        setSelectedButton(true);
         const response = await fetch(
-            `https://xivapi.com/character/${selectedIndex}?extended=1,data=FR`
+            `https://xivapi.com/character/${selectedIndex}?extended=1`
         );
         const data = await response.json();
 
         setFFXIVData(data);
         setIsLoading(false);
-        setSelectedButton(true);
     };
 
     return (

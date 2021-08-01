@@ -170,6 +170,21 @@
   margin-bottom: 1rem;
 }
 
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-data-content .person-data-mounts-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(4rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
+  row-gap: 1rem;
+  -webkit-column-gap: 0.4rem;
+          column-gap: 0.4rem;
+}
+
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-data-content .person-data-mounts-content .person-data-mounts-tooltip {
+  font-size: 2rem;
+  color: blue;
+}
+
 .home-container .home-content-container .home-content .home-right-side {
   max-height: 82vh;
   display: -webkit-box;

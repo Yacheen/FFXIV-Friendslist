@@ -10,7 +10,10 @@ import Stats from "./Stats";
 
 export default function Home() {
     const [selectedIndex, setSelectedIndex] = useState(0);
+    const [selectedMetaInformation, setSelectedMetaInformation] = useState();
+    const [buttonPressed, setButtonPressed] = useState();
     const [FFXIVData, setFFXIVData] = useState(undefined);
+    const [metaInfoLoading, setMetaInfoLoading] = useState(false);
     const raidGroupIdentities = {
         rikkasId: 30071260,
         lirasId: 24633600,
@@ -45,11 +48,30 @@ export default function Home() {
                             <div className="home-left-side-content">
                                 <div className="person-meta-information-container">
                                     <PersonMetaInformation
+                                        metaInfoLoading={metaInfoLoading}
+                                        setMetaInfoLoading={setMetaInfoLoading}
+                                        buttonPressed={buttonPressed}
+                                        setButtonPressed={setButtonPressed}
+                                        selectedIndex={selectedIndex}
+                                        selectedMetaInformation={
+                                            selectedMetaInformation
+                                        }
+                                        setSelectedMetaInformation={
+                                            setSelectedMetaInformation
+                                        }
                                         FFXIVData={FFXIVData}
                                     />
                                 </div>
                                 <div className="person-data-container">
-                                    <PersonData FFXIVData={FFXIVData} />
+                                    <PersonData
+                                        metaInfoLoading={metaInfoLoading}
+                                        setMetaInfoLoading={setMetaInfoLoading}
+                                        buttonPressed={buttonPressed}
+                                        selectedMetaInformation={
+                                            selectedMetaInformation
+                                        }
+                                        FFXIVData={FFXIVData}
+                                    />
                                 </div>
                             </div>
                         </div>

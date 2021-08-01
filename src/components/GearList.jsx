@@ -15,8 +15,11 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
     root: {
         width: "100%",
-        maxWidth: 300,
+        maxWidth: 250,
         backgroundColor: theme.palette.background.paper,
+    },
+    image: {
+        maxWidth: "50%",
     },
 }));
 
@@ -37,6 +40,7 @@ export default function GearList({ FFXIVData }) {
                             >
                                 <ListItemAvatar>
                                     <img
+                                        className={classes.image}
                                         src={`https://xivapi.com${gearPiece.Item.Icon}`}
                                         alt="Gear Piece"
                                     />

@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import React from "react";
+import React, { useState } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";
@@ -28,10 +28,54 @@ const useStyles = makeStyles({
     },
 });
 
-export default function PersonMetaInformation({ FFXIVData }) {
+export default function PersonMetaInformation({
+    FFXIVData,
+    selectedMetaInformation,
+    setSelectedMetaInformation,
+    selectedIndex,
+    buttonPressed,
+    setButtonPressed,
+    metaInfoLoading,
+    setMetaInfoLoading,
+}) {
     const classes = useStyles();
+
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+
+    const fetchSelectedData = async (buttonClicked, selectedIndex) => {
+        if (buttonClicked === "MOUNTS") {
+            setMetaInfoLoading(true);
+
+            const response = await fetch(
+                `https://xivapi.com/character/${selectedIndex}?data=MIMO`
+            );
+            const data = await response.json();
+            setSelectedMetaInformation(data);
+            setButtonPressed(buttonClicked);
+            setMetaInfoLoading(false);
+        } else if (buttonClicked === "MINIONS") {
+            setMetaInfoLoading(true);
+            const response = await fetch(
+                `https://xivapi.com/character/${selectedIndex}?data=MIMO`
+            );
+            const data = await response.json();
+            setSelectedMetaInformation(data);
+            setButtonPressed(buttonClicked);
+            setMetaInfoLoading(false);
+        } else {
+            setMetaInfoLoading(true);
+            const response = await fetch(
+                `https://xivapi.com/character/${selectedIndex}?data=${buttonPressed}`
+            );
+            const data = await response.json();
+            setSelectedMetaInformation(data);
+            setButtonPressed(buttonClicked);
+            setMetaInfoLoading(false);
+        }
+
+        //do dis
     };
 
     if (FFXIVData) {
@@ -61,34 +105,46 @@ export default function PersonMetaInformation({ FFXIVData }) {
                 </CardContent>
                 <CardActions className="meta-info-bottom">
                     <Button
+                        onClick={() =>
+                            fetchSelectedData("MOUNTS", selectedIndex)
+                        }
                         size="medium"
                         variant="contained"
                         color="secondary"
                         endIcon={<FlightIcon />}
+                        disabled={metaInfoLoading}
                     >
                         Mounts
                     </Button>
                     <Button
+                        onClick={() =>
+                            fetchSelectedData("MINIONS", selectedIndex)
+                        }
                         size="medium"
                         variant="contained"
                         color="secondary"
                         endIcon={<PetsIcon />}
+                        disabled={metaInfoLoading}
                     >
                         Pets
                     </Button>
                     <Button
+                        onClick={() => fetchSelectedData("FC", selectedIndex)}
                         size="medium"
                         variant="contained"
                         color="secondary"
                         endIcon={<PeopleAltIcon />}
+                        disabled={metaInfoLoading}
                     >
                         Guild
                     </Button>
                     <Button
+                        onClick={() => fetchSelectedData("FR", selectedIndex)}
                         size="medium"
                         variant="contained"
                         color="secondary"
                         endIcon={<FavoriteIcon />}
+                        disabled={metaInfoLoading}
                     >
                         Friends List
                     </Button>

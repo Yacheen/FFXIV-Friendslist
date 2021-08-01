@@ -39,6 +39,23 @@
                             margin-bottom: 1rem;
                         }
                     }
+                    .person-data-content {
+                        .person-data-header {
+                        }
+                        .person-data-mounts-content {
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fill,
+                                minmax(4rem, 1fr)
+                            );
+                            row-gap: 1rem;
+                            column-gap: 0.4rem;
+                            .person-data-mounts-tooltip {
+                                font-size: 2rem;
+                                color: blue;
+                            }
+                        }
+                    }
                 }
             }
             .home-right-side {

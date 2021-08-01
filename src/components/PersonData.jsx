@@ -1,56 +1,101 @@
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
+import MountsData from "./MountsData";
+
 import React from "react";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
     },
-    bullet: {
-        display: "inline-block",
-        margin: "0 2px",
-        transform: "scale(0.8)",
+    gridRoot: {
+        flexGrow: 1,
     },
-    title: {
-        fontSize: 14,
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: "center",
     },
-    pos: {
-        marginBottom: 12,
-    },
-});
+}));
 
-export default function PersonData() {
+export default function PersonData({
+    selectedMetaInformation,
+    FFXIVData,
+    buttonPressed,
+    metaInfoLoading,
+    setMetaInfoLoading,
+}) {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
-
-    return (
-        <Card className={classes.root}>
-            <CardContent>
-                <Typography
-                    className={classes.title}
-                    color="textSecondary"
-                    gutterBottom
-                >
-                    Word of the Day
-                </Typography>
-                <Typography variant="h5" component="h2">
-                    be{bull}nev{bull}o{bull}lent
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                    adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                    well meaning and kindly.
-                    <br />a benevolent smile
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Learn More</Button>
-            </CardActions>
-        </Card>
-    );
+    while (metaInfoLoading) {
+        return (
+            <Card className={classes.root}>
+                <CardContent className="person-data-content">
+                    <Typography variant="h3" color="secondary" align="center">
+                        Loading...
+                    </Typography>
+                </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    }
+    if (buttonPressed == "FC") {
+        return (
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography
+                        variant="h3"
+                        className="person-data-header"
+                        color="primary"
+                        align="center"
+                    >
+                        Guild
+                    </Typography>
+                </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    } else if (buttonPressed == "FR") {
+        return (
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography
+                        variant="h3"
+                        className="person-data-header"
+                        color="primary"
+                        align="center"
+                    >
+                        Friends
+                    </Typography>
+                </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    } else if (buttonPressed === "MOUNTS") {
+        return <MountsData selectedMetaInformation={selectedMetaInformation} />;
+    } else if (buttonPressed === "MINIONS") {
+        return (
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography
+                        variant="h3"
+                        className="person-data-header"
+                        color="primary"
+                        align="center"
+                    >
+                        Pets
+                    </Typography>
+                </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    } else {
+        return (
+            <Card className={classes.root}>
+                <CardContent> put an image here i guess </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    }
 }
