@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import React, { useState } from "react";
+import React from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";

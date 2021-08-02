@@ -1,3 +1,7 @@
+.MuiTooltip-popperInteractive {
+    color: blue;
+    font-size: 1.4rem;
+}
 .home-container {
     margin: 0 auto;
     display: flex;
@@ -42,17 +46,15 @@
                     .person-data-content {
                         .person-data-header {
                         }
-                        .person-data-mounts-content {
-                            display: grid;
-                            grid-template-columns: repeat(
-                                auto-fill,
-                                minmax(4rem, 1fr)
-                            );
-                            row-gap: 1rem;
-                            column-gap: 0.4rem;
-                            .person-data-mounts-tooltip {
-                                font-size: 2rem;
-                                color: blue;
+                        .person-data-mounts {
+                            .person-data-mounts-content {
+                                display: grid;
+                                grid-template-columns: repeat(
+                                    auto-fill,
+                                    minmax(4rem, 1fr)
+                                );
+                                row-gap: 1rem;
+                                column-gap: 0.4rem;
                             }
                         }
                     }

@@ -5,7 +5,6 @@ import {
     Grid,
     Paper,
     Tooltip,
-    Avatar,
     Card,
     makeStyles,
     CardContent,
@@ -22,6 +21,10 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: "center",
+    },
+    tooltip: {
+        color: "primary",
+        fontSize: 20,
     },
 }));
 
@@ -47,10 +50,12 @@ export default function MountsData({ selectedMetaInformation, selectedIndex }) {
                                 <Grid container spacing={2}>
                                     <Grid container={true} item xs={1}>
                                         <Tooltip
+                                            classes={{
+                                                tooltip: classes.tooltip,
+                                            }}
                                             arrow={true}
-                                            className={`person-data-mounts-tooltip`}
                                             interactive={true}
-                                            title={mountInfo.Name}
+                                            title={`Mount: ${mountInfo.Name}`}
                                             placement="top"
                                         >
                                             <img
