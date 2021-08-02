@@ -43,8 +43,13 @@
                             margin-bottom: 1rem;
                         }
                     }
+
                     .person-data-content {
+                        max-height: 50vh;
+                        overflow: scroll;
+                        overflow-x: hidden;
                         .person-data-header {
+                            margin-bottom: 2rem;
                         }
                         .person-data-mounts {
                             .person-data-mounts-content {

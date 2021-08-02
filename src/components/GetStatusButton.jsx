@@ -7,6 +7,7 @@ export default function GetStatusButton({
     setFFXIVData,
     selectedButton,
     setSelectedButton,
+    setSelectedMetaInformation,
 }) {
     const [isLoading, setIsLoading] = useState(false);
 
@@ -19,6 +20,7 @@ export default function GetStatusButton({
         const data = await response.json();
 
         setFFXIVData(data);
+        setSelectedMetaInformation("");
         setIsLoading(false);
     };
 

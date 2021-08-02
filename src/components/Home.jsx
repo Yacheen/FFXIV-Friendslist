@@ -32,6 +32,7 @@ export default function Home() {
             <Paper className="home-container" square>
                 <div className="sidebar-container">
                     <SideBar
+                        setSelectedMetaInformation={setSelectedMetaInformation}
                         FFXIVData={FFXIVData}
                         setFFXIVData={setFFXIVData}
                         selectedIndex={selectedIndex}

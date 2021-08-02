@@ -6,6 +6,7 @@ import { Typography } from "@material-ui/core";
 import MountsData from "./MountsData";
 
 import React from "react";
+import PetsData from "./PetsData";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,8 +32,8 @@ export default function PersonData({
     while (metaInfoLoading) {
         return (
             <Card className={classes.root}>
-                <CardContent className="person-data-content">
-                    <Typography variant="h3" color="secondary" align="center">
+                <CardContent className={`person-data-loading`}>
+                    <Typography variant="h4" color="secondary">
                         Loading...
                     </Typography>
                 </CardContent>
@@ -40,60 +41,66 @@ export default function PersonData({
             </Card>
         );
     }
-    if (buttonPressed == "FC") {
-        return (
-            <Card className={classes.root}>
-                <CardContent>
-                    <Typography
-                        variant="h3"
-                        className="person-data-header"
-                        color="primary"
-                        align="center"
-                    >
-                        Guild
-                    </Typography>
-                </CardContent>
-                <CardActions></CardActions>
-            </Card>
-        );
-    } else if (buttonPressed == "FR") {
-        return (
-            <Card className={classes.root}>
-                <CardContent>
-                    <Typography
-                        variant="h3"
-                        className="person-data-header"
-                        color="primary"
-                        align="center"
-                    >
-                        Friends
-                    </Typography>
-                </CardContent>
-                <CardActions></CardActions>
-            </Card>
-        );
-    } else if (buttonPressed === "MOUNTS") {
-        return <MountsData selectedMetaInformation={selectedMetaInformation} />;
-    } else if (buttonPressed === "MINIONS") {
-        return (
-            <Card className={classes.root}>
-                <CardContent>
-                    <Typography
-                        variant="h3"
-                        className="person-data-header"
-                        color="primary"
-                        align="center"
-                    >
-                        Pets
-                    </Typography>
-                </CardContent>
-                <CardActions></CardActions>
-            </Card>
-        );
+    if (selectedMetaInformation) {
+        if (buttonPressed === "FC") {
+            return (
+                <Card className={classes.root}>
+                    <CardContent>
+                        <Typography
+                            variant="h3"
+                            className="person-data-header"
+                            color="primary"
+                            align="center"
+                        >
+                            Guild
+                        </Typography>
+                    </CardContent>
+                    <CardActions></CardActions>
+                </Card>
+            );
+        } else if (buttonPressed === "FR") {
+            return (
+                <Card className={classes.root}>
+                    <CardContent>
+                        <Typography
+                            variant="h3"
+                            className="person-data-header"
+                            color="primary"
+                            align="center"
+                        >
+                            Friends
+                        </Typography>
+                    </CardContent>
+                    <CardActions></CardActions>
+                </Card>
+            );
+        } else if (buttonPressed === "MOUNTS") {
+            return (
+                <MountsData selectedMetaInformation={selectedMetaInformation} />
+            );
+        } else if (buttonPressed === "MINIONS") {
+            return (
+                <PetsData selectedMetaInformation={selectedMetaInformation} />
+            );
+        } else {
+            return (
+                <Card className={classes.root}>
+                    <CardContent>
+                        {" "}
+                        Something broke from the inside! Please try again
+                        later..{" "}
+                    </CardContent>
+                    <CardActions></CardActions>
+                </Card>
+            );
+        }
     } else {
         return (
             <Card className={classes.root}>
-                <CardContent> put an image here i guess </CardContent>
+                <CardContent>
+                    {" "}
+                    Hint: Choose something above to display stuff here!{" "}
+                </CardContent>
                 <CardActions></CardActions>
             </Card>
         );

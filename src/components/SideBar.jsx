@@ -10,6 +10,7 @@ export default function SideBar({
     selectedIndex,
     raidGroupIdentities,
     setSelectedIndex,
+    setSelectedMetaInformation,
 }) {
     const [selectedButton, setSelectedButton] = useState(true);
 
@@ -22,6 +23,7 @@ export default function SideBar({
                         see their stats!
                     </Typography>
                     <GetStatusButton
+                        setSelectedMetaInformation={setSelectedMetaInformation}
                         selectedButton={selectedButton}
                         setSelectedButton={setSelectedButton}
                         FFXIVData={FFXIVData}

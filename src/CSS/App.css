@@ -175,6 +175,16 @@
   margin-bottom: 1rem;
 }
 
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-data-content {
+  max-height: 50vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-data-content .person-data-header {
+  margin-bottom: 2rem;
+}
+
 .home-container .home-content-container .home-content .home-left-side .home-left-side-content .person-data-content .person-data-mounts .person-data-mounts-content {
   display: -ms-grid;
   display: grid;
