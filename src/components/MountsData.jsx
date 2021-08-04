@@ -33,18 +33,19 @@ export default function MountsData({ selectedMetaInformation, selectedIndex }) {
     if (selectedMetaInformation) {
         return (
             <Card className={classes.root}>
+                <Typography
+                    variant="h3"
+                    className="person-data-header"
+                    color="primary"
+                    align="center"
+                >
+                    Mounts
+                </Typography>
                 <CardContent className="person-data-content">
-                    <Typography
-                        variant="h3"
-                        className="person-data-header"
-                        color="primary"
-                        align="center"
-                    >
-                        Mounts
-                    </Typography>
                     <div className="person-data-mounts">
                         <Paper
                             className={`${classes.paper} person-data-mounts-content`}
+                            elevation={0}
                         >
                             {selectedMetaInformation.Mounts.map((mountInfo) => {
                                 return (
@@ -55,7 +56,7 @@ export default function MountsData({ selectedMetaInformation, selectedIndex }) {
                                                     tooltip: classes.tooltip,
                                                 }}
                                                 arrow={true}
-                                                title={`Mount | ${mountInfo.Name}`}
+                                                title={`${mountInfo.Name}`}
                                                 placement="top"
                                             >
                                                 <img

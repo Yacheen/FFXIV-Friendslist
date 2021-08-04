@@ -7,6 +7,8 @@ import MountsData from "./MountsData";
 
 import React from "react";
 import PetsData from "./PetsData";
+import FriendsListData from "./FriendsListData";
+import GuildData from "./GuildData";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PersonData({
+    setSelectedMetaInformation,
     selectedMetaInformation,
     FFXIVData,
     buttonPressed,
@@ -44,35 +47,22 @@ export default function PersonData({
     if (selectedMetaInformation) {
         if (buttonPressed === "FC") {
             return (
-                <Card className={classes.root}>
-                    <CardContent>
-                        <Typography
-                            variant="h3"
-                            className="person-data-header"
-                            color="primary"
-                            align="center"
-                        >
-                            Guild
-                        </Typography>
-                    </CardContent>
-                    <CardActions></CardActions>
-                </Card>
+                <GuildData
+                    setSelectedMetaInformation={setSelectedMetaInformation}
+                    selectedMetaInformation={selectedMetaInformation}
+                    metaInfoLoading={metaInfoLoading}
+                    setMetaInfoLoading={setMetaInfoLoading}
+                    FFXIVData={FFXIVData}
+                />
             );
         } else if (buttonPressed === "FR") {
             return (
-                <Card className={classes.root}>
-                    <CardContent>
-                        <Typography
-                            variant="h3"
-                            className="person-data-header"
-                            color="primary"
-                            align="center"
-                        >
-                            Friends
-                        </Typography>
-                    </CardContent>
-                    <CardActions></CardActions>
-                </Card>
+                <FriendsListData
+                    selectedMetaInformation={selectedMetaInformation}
+                    setSelectedMetaInformation={setSelectedMetaInformation}
+                    setMetaInfoLoading={setMetaInfoLoading}
+                    metaInfoLoading={metaInfoLoading}
+                />
             );
         } else if (buttonPressed === "MOUNTS") {
             return (

@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
     },
     tooltip: {
-        color: "primary",
         fontSize: 20,
     },
 }));
@@ -32,15 +31,15 @@ export default function PetsData({ selectedMetaInformation }) {
     if (selectedMetaInformation) {
         return (
             <Card className={classes.root}>
+                <Typography
+                    variant="h3"
+                    className="person-data-header"
+                    color="primary"
+                    align="center"
+                >
+                    Pets
+                </Typography>
                 <CardContent className="person-data-content">
-                    <Typography
-                        variant="h3"
-                        className="person-data-header"
-                        color="primary"
-                        align="center"
-                    >
-                        Pets
-                    </Typography>
                     <div className="person-data-mounts">
                         <Paper
                             className={`${classes.paper} person-data-mounts-content`}
@@ -57,7 +56,7 @@ export default function PetsData({ selectedMetaInformation }) {
                                                             classes.tooltip,
                                                     }}
                                                     arrow={true}
-                                                    title={`Minion | ${mountInfo.Name}`}
+                                                    title={`${mountInfo.Name}`}
                                                     placement="top"
                                                 >
                                                     <img

@@ -12,7 +12,7 @@ import FlightIcon from "@material-ui/icons/Flight";
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 450,
+        width: 450,
         display: "block",
     },
     bullet: {
@@ -44,36 +44,31 @@ export default function PersonMetaInformation({
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
 
-    const fetchSelectedData = async (buttonClicked, selectedIndex) => {
+    const fetchSelectedData = async (buttonClicked, characterId) => {
+        setMetaInfoLoading(true);
         if (buttonClicked === "MOUNTS") {
-            setMetaInfoLoading(true);
-
             const response = await fetch(
-                `https://xivapi.com/character/${selectedIndex}?data=MIMO`
+                `https://xivapi.com/character/${characterId}?data=MIMO`
             );
             const data = await response.json();
             setSelectedMetaInformation(data);
             setButtonPressed(buttonClicked);
-            setMetaInfoLoading(false);
         } else if (buttonClicked === "MINIONS") {
-            setMetaInfoLoading(true);
             const response = await fetch(
-                `https://xivapi.com/character/${selectedIndex}?data=MIMO`
+                `https://xivapi.com/character/${characterId}?data=MIMO`
             );
             const data = await response.json();
             setSelectedMetaInformation(data);
             setButtonPressed(buttonClicked);
-            setMetaInfoLoading(false);
         } else {
-            setMetaInfoLoading(true);
             const response = await fetch(
-                `https://xivapi.com/character/${selectedIndex}?data=${buttonPressed}`
+                `https://xivapi.com/character/${characterId}?data=${buttonClicked}`
             );
             const data = await response.json();
             setSelectedMetaInformation(data);
             setButtonPressed(buttonClicked);
-            setMetaInfoLoading(false);
         }
+        setMetaInfoLoading(false);
 
         //do dis
     };
@@ -106,7 +101,10 @@ export default function PersonMetaInformation({
                 <CardActions className="meta-info-bottom">
                     <Button
                         onClick={() =>
-                            fetchSelectedData("MOUNTS", selectedIndex)
+                            fetchSelectedData(
+                                "MOUNTS",
+                                `${FFXIVData.Character.ID}`
+                            )
                         }
                         size="medium"
                         variant="contained"
@@ -118,7 +116,7 @@ export default function PersonMetaInformation({
                     </Button>
                     <Button
                         onClick={() =>
-                            fetchSelectedData("MINIONS", selectedIndex)
+                            fetchSelectedData("MINIONS", FFXIVData.Character.ID)
                         }
                         size="medium"
                         variant="contained"
@@ -129,7 +127,9 @@ export default function PersonMetaInformation({
                         Pets
                     </Button>
                     <Button
-                        onClick={() => fetchSelectedData("FC", selectedIndex)}
+                        onClick={() =>
+                            fetchSelectedData("FC", FFXIVData.Character.ID)
+                        }
                         size="medium"
                         variant="contained"
                         color="secondary"
@@ -139,7 +139,9 @@ export default function PersonMetaInformation({
                         Guild
                     </Button>
                     <Button
-                        onClick={() => fetchSelectedData("FR", selectedIndex)}
+                        onClick={() =>
+                            fetchSelectedData("FR", FFXIVData.Character.ID)
+                        }
                         size="medium"
                         variant="contained"
                         color="secondary"

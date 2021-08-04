@@ -65,6 +65,9 @@ export default function Home() {
                                 </div>
                                 <div className="person-data-container">
                                     <PersonData
+                                        setSelectedMetaInformation={
+                                            setSelectedMetaInformation
+                                        }
                                         metaInfoLoading={metaInfoLoading}
                                         setMetaInfoLoading={setMetaInfoLoading}
                                         buttonPressed={buttonPressed}

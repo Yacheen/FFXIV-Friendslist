@@ -46,8 +46,8 @@
 
                     .person-data-content {
                         max-height: 50vh;
-                        overflow: scroll;
-                        overflow-x: hidden;
+                        overflow: auto;
+
                         .person-data-header {
                             margin-bottom: 2rem;
                         }
@@ -74,6 +74,9 @@
                     max-height: 80%;
                     display: flex;
                     justify-content: flex-end;
+                    .gear-list {
+                        overflow-y: scroll;
+                    }
 
                     .char-model-container {
                         margin-right: 2rem;
