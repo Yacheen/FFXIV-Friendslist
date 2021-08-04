@@ -7,24 +7,47 @@ import {
     CardActions,
     Button,
     Paper,
+    Grid,
+    Tooltip,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        minWidth: 275,
-        display: "block",
-        maxHeight: "50vh",
+        maxWidth: 450,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        maxHeight: "55vh",
         overflow: "auto",
     },
     guildInfo: {
         display: "flex",
         justifyContent: "space-between",
+        marginBottom: "4rem",
     },
     guildMetaInformation: {
-        display: "block",
+        display: "flex",
+        flexDirection: "column",
     },
     buttonStyling: {
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: theme.palette.primary.light,
+        fontSize: 14,
+    },
+    quoteStyling: {
+        color: theme.palette.secondary.light,
+    },
+    focusStyling: {
+        marginBottom: "1rem",
+    },
+    focusItemStyling: {
+        opacity: 0.2,
+    },
+    tooltipStyling: {
+        color: "primary",
+        fontSize: 20,
+    },
+    focusContainerStyling: {
+        padding: "2rem",
     },
 }));
 
@@ -48,31 +71,115 @@ export default function GuildData({
     const classes = useStyles();
     return (
         <Card className={`${classes.root}`}>
+            <Typography variant="h3" color="primary" align="center">
+                {selectedMetaInformation.FreeCompany.Name}
+            </Typography>
             <Typography
-                variant="h3"
-                className="person-data-header"
-                color="primary"
+                variant="h4"
                 align="center"
+                color="primary"
+                classes={{
+                    colorPrimary: classes.quoteStyling,
+                }}
             >
-                Guild
+                " {selectedMetaInformation.FreeCompany.Slogan}"
             </Typography>
             <CardContent>
                 <div className={classes.guildInfo}>
                     <div className={classes.guildMetaInformation}>
-                        {selectedMetaInformation.FreeCompany.Name}
+                        <Typography variant="h4">
+                            Members:{" "}
+                            {
+                                selectedMetaInformation.FreeCompany
+                                    .ActiveMemberCount
+                            }
+                        </Typography>
+                        <Typography variant="h4">
+                            Server: {selectedMetaInformation.FreeCompany.Server}
+                        </Typography>
+                        <Typography variant="h4">
+                            Rank: {selectedMetaInformation.FreeCompany.Rank}
+                        </Typography>
                     </div>
-                    <Button
-                        size="medium"
-                        variant="contained"
-                        color={classes.buttonStyling}
-                        disabled={metaInfoLoading}
-                        onClick={() => getGuildMembers(FFXIVData.Character.ID)}
-                    >
-                        View members
-                    </Button>
+                    <div className={classes.guildButton}>
+                        <Button
+                            size="medium"
+                            variant="contained"
+                            classes={{
+                                contained: classes.buttonStyling,
+                            }}
+                            disabled={metaInfoLoading}
+                            onClick={() =>
+                                getGuildMembers(FFXIVData.Character.ID)
+                            }
+                        >
+                            View members
+                        </Button>
+                    </div>
                 </div>
 
-                <Paper elevation={3}></Paper>
+                <Typography variant="h4" className={classes.focusStyling}>
+                    Focus
+                </Typography>
+                <Paper
+                    variant="outlined"
+                    square
+                    className={classes.focusContainerStyling}
+                >
+                    <Grid container spacing={3}>
+                        {selectedMetaInformation.FreeCompany.Focus.map(
+                            (focusedItem) => {
+                                //for each focused item, make a grid item
+                                if (focusedItem.Status === true) {
+                                    return (
+                                        <Grid item xs>
+                                            <Tooltip
+                                                classes={{
+                                                    tooltip:
+                                                        classes.tooltipStyling,
+                                                }}
+                                                arrow={true}
+                                                title={`${focusedItem.Name}`}
+                                                placement="top"
+                                            >
+                                                <img
+                                                    src={focusedItem.Icon}
+                                                    alt={focusedItem.Name}
+                                                />
+                                            </Tooltip>
+                                        </Grid>
+                                    );
+                                } else {
+                                    //return a low opacity focus
+                                    return (
+                                        <Grid
+                                            item
+                                            xs
+                                            classes={{
+                                                item: classes.focusItemStyling,
+                                            }}
+                                        >
+                                            <Tooltip
+                                                classes={{
+                                                    tooltip:
+                                                        classes.tooltipStyling,
+                                                }}
+                                                arrow={true}
+                                                title={`${focusedItem.Name}`}
+                                                placement="top"
+                                            >
+                                                <img
+                                                    src={focusedItem.Icon}
+                                                    alt={focusedItem.Name}
+                                                />
+                                            </Tooltip>
+                                        </Grid>
+                                    );
+                                }
+                            }
+                        )}
+                    </Grid>
+                </Paper>
             </CardContent>
             <CardActions></CardActions>
         </Card>

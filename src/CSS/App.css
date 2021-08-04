@@ -223,6 +223,12 @@
 }
 
 .home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container .char-model-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-right: 2rem;
   max-height: 76rem;
 }
