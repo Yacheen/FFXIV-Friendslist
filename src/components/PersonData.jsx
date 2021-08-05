@@ -9,6 +9,7 @@ import React from "react";
 import PetsData from "./PetsData";
 import FriendsListData from "./FriendsListData";
 import GuildData from "./GuildData";
+import GuildMemberData from "./GuildMemberData";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,6 +31,7 @@ export default function PersonData({
     buttonPressed,
     metaInfoLoading,
     setMetaInfoLoading,
+    setButtonPressed,
 }) {
     const classes = useStyles();
     while (metaInfoLoading) {
@@ -38,6 +40,11 @@ export default function PersonData({
                 <CardContent className={`person-data-loading`}>
                     <Typography variant="h4" color="secondary">
                         Loading...
+                        <br /> <br />
+                        <Typography variant="h5" color="primary">
+                            Hint: <br /> Friends List may take longer, as some
+                            people are very friendly :)
+                        </Typography>
                     </Typography>
                 </CardContent>
                 <CardActions></CardActions>
@@ -53,6 +60,7 @@ export default function PersonData({
                     metaInfoLoading={metaInfoLoading}
                     setMetaInfoLoading={setMetaInfoLoading}
                     FFXIVData={FFXIVData}
+                    setButtonPressed={setButtonPressed}
                 />
             );
         } else if (buttonPressed === "FR") {
@@ -71,6 +79,17 @@ export default function PersonData({
         } else if (buttonPressed === "MINIONS") {
             return (
                 <PetsData selectedMetaInformation={selectedMetaInformation} />
+            );
+        } else if (buttonPressed === "FCM") {
+            return (
+                <GuildMemberData
+                    setSelectedMetaInformation={setSelectedMetaInformation}
+                    selectedMetaInformation={selectedMetaInformation}
+                    FFXIVData={FFXIVData}
+                    metaInfoLoading={metaInfoLoading}
+                    setMetaInfoLoading={setMetaInfoLoading}
+                    setButtonPressed={setButtonPressed}
+                />
             );
         } else {
             return (

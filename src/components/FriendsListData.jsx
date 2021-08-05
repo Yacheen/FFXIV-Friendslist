@@ -39,7 +39,7 @@ export default function FriendsListData({
 }) {
     const classes = useStyles();
 
-    if (selectedMetaInformation.Friends) {
+    if (selectedMetaInformation.Friends.length > 0) {
         return (
             <Card className={classes.root}>
                 <Typography

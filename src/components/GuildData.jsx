@@ -57,15 +57,16 @@ export default function GuildData({
     FFXIVData,
     metaInfoLoading,
     setMetaInfoLoading,
+    setButtonPressed,
 }) {
-    const getGuildMembers = async (characterId) => {
+    const getGuildMembers = async (buttonClicked, characterId) => {
         setMetaInfoLoading(true);
         const response = await fetch(
-            `https://xivapi.com/character/${characterId}?data=FCM`
+            `https://xivapi.com/character/${characterId}?data=${buttonClicked}`
         );
         const data = await response.json();
         setSelectedMetaInformation(data);
-
+        setButtonPressed(buttonClicked);
         setMetaInfoLoading(false);
     };
     const classes = useStyles();
@@ -110,7 +111,7 @@ export default function GuildData({
                             }}
                             disabled={metaInfoLoading}
                             onClick={() =>
-                                getGuildMembers(FFXIVData.Character.ID)
+                                getGuildMembers("FCM", FFXIVData.Character.ID)
                             }
                         >
                             View members

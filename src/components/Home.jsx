@@ -70,6 +70,7 @@ export default function Home() {
                                         }
                                         metaInfoLoading={metaInfoLoading}
                                         setMetaInfoLoading={setMetaInfoLoading}
+                                        setButtonPressed={setButtonPressed}
                                         buttonPressed={buttonPressed}
                                         selectedMetaInformation={
                                             selectedMetaInformation
