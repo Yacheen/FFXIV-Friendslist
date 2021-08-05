@@ -23,6 +23,7 @@
                     min-height: 100%;
                     .person-meta-information-container {
                         margin-bottom: 8rem;
+
                         .meta-info-top {
                             display: flex;
                             flex-direction: column;
@@ -74,6 +75,7 @@
                     max-height: 80%;
                     display: flex;
                     justify-content: flex-end;
+                    margin-bottom: 2rem;
                     .gear-list {
                         overflow-y: scroll;
                     }
@@ -94,34 +96,16 @@
                 //maybe add an accenting background color
                 .char-stats-container {
                     display: flex;
-                    justify-content: center;
-                    .char-stats-content {
-                        display: flex;
-                        flex-direction: column;
-                        max-width: 100%;
-
-                        .char-stats-attributes {
-                            display: flex;
-                            justify-content: center;
-                        }
-                        .char-stats-name-and-value-container {
-                            .char-stats-name-and-value {
-                                display: inline-block;
-                                padding: 1rem;
-
-                                .char-stats-name {
-                                    display: flex;
-                                    justify-content: center;
-                                }
-                                .char-stats-value {
-                                    display: flex;
-                                    justify-content: center;
-                                }
-                            }
-                        }
-                    }
+                    justify-content: flex-end;
                 }
             }
         }
+    }
+}
+.intro-page {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    .intro-card {
     }
 }

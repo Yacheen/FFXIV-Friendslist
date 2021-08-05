@@ -18,10 +18,6 @@ export default function SideBar({
         <Paper elevation={3} square className={` side-bar-container`}>
             <div className="side-bar-content">
                 <div className="get-status-button">
-                    <Typography variant="h5" className="button-hint">
-                        Choose a player below, and click on the button below to
-                        see their stats!
-                    </Typography>
                     <GetStatusButton
                         setSelectedMetaInformation={setSelectedMetaInformation}
                         selectedButton={selectedButton}

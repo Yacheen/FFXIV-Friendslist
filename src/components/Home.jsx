@@ -1,4 +1,4 @@
-import { Paper } from "@material-ui/core";
+import { Paper, Card, CardContent, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 
 import CharacterModel from "./CharacterModel";
@@ -6,7 +6,8 @@ import GearList from "./GearList";
 import PersonData from "./PersonData";
 import PersonMetaInformation from "./PersonMetaInformation";
 import SideBar from "./SideBar";
-import Stats from "./Stats";
+import Attributes from "./Attributes";
+import Jobs from "./Jobs";
 
 export default function Home() {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -14,6 +15,7 @@ export default function Home() {
     const [buttonPressed, setButtonPressed] = useState();
     const [FFXIVData, setFFXIVData] = useState(undefined);
     const [metaInfoLoading, setMetaInfoLoading] = useState(false);
+    const [onIntroScreen, setOnIntroScreen] = useState(true);
     const raidGroupIdentities = {
         rikkasId: 30071260,
         lirasId: 24633600,
@@ -41,7 +43,6 @@ export default function Home() {
                     />
                 </div>
                 {/* main content */}
-
                 <div className="home-content-container">
                     <div className="home-content">
                         {/* left side of main content */}
@@ -88,7 +89,8 @@ export default function Home() {
                                 <GearList FFXIVData={FFXIVData} />
                             </div>
                             <div className="char-stats-container">
-                                <Stats FFXIVData={FFXIVData} />
+                                <Jobs FFXIVData={FFXIVData} />
+                                <Attributes FFXIVData={FFXIVData} />
                             </div>
                         </div>
                     </div>

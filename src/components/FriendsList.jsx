@@ -13,6 +13,9 @@ const useStyles = makeStyles((theme) => ({
         display: "block",
         backgroundColor: theme.palette.background.paper,
     },
+    listItemTextStyling: {
+        fontSize: 14,
+    },
 }));
 
 export default function FriendsList({
@@ -44,7 +47,10 @@ export default function FriendsList({
                             alt="Rikka Zadyo"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Rikka Zadyo" />
+                    <ListItemText
+                        primary="Rikka Zadyo"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -61,7 +67,10 @@ export default function FriendsList({
                             alt="Mitsu Akiyama"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Mitsu Akiyama" />
+                    <ListItemText
+                        primary="Mitsu Akiyama"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -78,7 +87,10 @@ export default function FriendsList({
                             alt="Kyary Valentine"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Kyary Valentine" />
+                    <ListItemText
+                        primary="Kyary Valentine"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -95,7 +107,10 @@ export default function FriendsList({
                             alt="Lira Zadyo"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Lira Zadyo" />
+                    <ListItemText
+                        primary="Lira Zadyo"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -115,7 +130,10 @@ export default function FriendsList({
                             alt="Braxton Higgs"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Braxton Higgs" />
+                    <ListItemText
+                        primary="Braxton Higgs"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -132,7 +150,10 @@ export default function FriendsList({
                             alt="Queen Ezmi"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Queen Ezmi" />
+                    <ListItemText
+                        primary="Queen Ezmi"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -149,7 +170,10 @@ export default function FriendsList({
                             alt="Uhra Moon"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Uhra Moon" />
+                    <ListItemText
+                        primary="Uhra Moon"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
 
@@ -169,7 +193,10 @@ export default function FriendsList({
                             alt="Yassin Anivia"
                         />
                     </ListItemIcon>
-                    <ListItemText primary="Yassin Anivia" />
+                    <ListItemText
+                        primary="Yassin Anivia"
+                        classes={{ primary: classes.listItemTextStyling }}
+                    />
                 </ListItem>
                 <Divider />
             </List>

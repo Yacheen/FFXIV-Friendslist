@@ -12,11 +12,7 @@ export default function CharacterModel(props) {
                 />
             </div>
         );
+    } else {
+        return null;
     }
-
-    return (
-        <div className="char-model-container">
-            <Typography variant="h3">Select someone to get started!</Typography>
-        </div>
-    );
 }

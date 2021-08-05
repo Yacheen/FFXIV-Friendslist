@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         maxHeight: "50vh",
     },
     friendsListPrimaryStyling: {
+        color: theme.palette.primary.light,
         fontSize: 18,
     },
     friendsListSecondaryStyling: {
@@ -84,6 +85,23 @@ export default function FriendsListData({
                             })}
                         </List>
                     </Paper>
+                </CardContent>
+                <CardActions></CardActions>
+            </Card>
+        );
+    } else if (!selectedMetaInformation) {
+        return (
+            <Card className={classes.root}>
+                <CardContent>
+                    <Typography
+                        variant="h4"
+                        className="person-data-header"
+                        align="center"
+                    >
+                        {selectedMetaInformation.Character.Name} Something just
+                        totally broke from the inside. Try clicking on friends
+                        again, or try another button.
+                    </Typography>
                 </CardContent>
                 <CardActions></CardActions>
             </Card>

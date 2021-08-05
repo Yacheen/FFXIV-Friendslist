@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         textAlign: "center",
     },
+    loadingTypography: {
+        color: theme.palette.secondary.light,
+    },
 }));
 
 export default function PersonData({
@@ -41,9 +44,12 @@ export default function PersonData({
                     <Typography variant="h4" color="secondary">
                         Loading...
                         <br /> <br />
-                        <Typography variant="h5" color="primary">
-                            Hint: <br /> Friends List may take longer, as some
-                            people are very friendly :)
+                        <Typography
+                            variant="h5"
+                            classes={{ h5: classes.loadingTypography }}
+                        >
+                            Hint: <br /> Friends List may take a tiny bit
+                            longer..
                         </Typography>
                     </Typography>
                 </CardContent>
@@ -104,14 +110,6 @@ export default function PersonData({
             );
         }
     } else {
-        return (
-            <Card className={classes.root}>
-                <CardContent>
-                    {" "}
-                    Hint: Choose something above to display stuff here!{" "}
-                </CardContent>
-                <CardActions></CardActions>
-            </Card>
-        );
+        return null;
     }
 }

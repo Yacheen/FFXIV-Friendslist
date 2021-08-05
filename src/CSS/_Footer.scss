@@ -1,9 +1,14 @@
 .footer {
-  padding: 4rem 0rem;
-  position: relative;
-  z-index: 5;
-  .footer-content {
-    max-width: 90%;
-    margin: 0 auto;
-  }
+    padding: 4rem 0rem;
+    position: relative;
+    z-index: 5;
+    .footer-content {
+        max-width: 78%;
+
+        margin: 0 auto;
+        .footer-copyright-text {
+            opacity: 1;
+            color: darkgray;
+        }
+    }
 }

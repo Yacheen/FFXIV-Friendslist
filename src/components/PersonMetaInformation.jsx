@@ -155,13 +155,16 @@ export default function PersonMetaInformation({
         );
     } else {
         return (
-            <Card className={classes.root}>
-                <CardContent>
-                    <Typography variant="h3">
-                        No info to display yet..
-                    </Typography>
-                </CardContent>
-            </Card>
+            <section className="intro-page">
+                <Card className="intro-card" raised={true}>
+                    <CardContent>
+                        <Typography variant="h3" align="center">
+                            Choose a player, then click on view profile to get
+                            started
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </section>
         );
     }
 }

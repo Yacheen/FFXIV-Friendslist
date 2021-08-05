@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     image: {
-        maxWidth: "50%",
+        maxWidth: "80%",
     },
     primaryStyling: {
         color: theme.palette.secondary.light,
@@ -80,13 +80,9 @@ export default function GearList({ FFXIVData }) {
                 )}
             </List>
         );
+    } else {
+        return null;
     }
-
-    return (
-        <Paper className="char-gear-container">
-            <Typography variant="h4">No gear lists to show yet..</Typography>
-        </Paper>
-    );
 
     // return (
     //   <List className={classes.root}>

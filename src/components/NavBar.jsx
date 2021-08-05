@@ -5,6 +5,7 @@ import React from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 import Home from "./Home";
+import Motivation from "./Motivation";
 
 const useStyles = makeStyles({
     root: {
@@ -44,6 +45,7 @@ export default function NavBar() {
             </Paper>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/Motivation" component={Motivation} />
             </Switch>
         </Router>
     );

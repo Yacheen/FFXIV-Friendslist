@@ -91,7 +91,6 @@
 }
 
 .side-bar-container .side-bar-content {
-  margin-top: 2rem;
   width: 100%;
 }
 
@@ -216,6 +215,7 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-bottom: 2rem;
 }
 
 .home-container .home-content-container .home-content .home-right-side .char-model-and-gear-container .gear-list {
@@ -243,52 +243,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-.home-container .home-content-container .home-content .home-right-side .char-stats-container .char-stats-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  max-width: 100%;
-}
-
-.home-container .home-content-container .home-content .home-right-side .char-stats-container .char-stats-content .char-stats-attributes {
+.intro-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.home-container .home-content-container .home-content .home-right-side .char-stats-container .char-stats-content .char-stats-name-and-value-container .char-stats-name-and-value {
-  display: inline-block;
-  padding: 1rem;
-}
-
-.home-container .home-content-container .home-content .home-right-side .char-stats-container .char-stats-content .char-stats-name-and-value-container .char-stats-name-and-value .char-stats-name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.home-container .home-content-container .home-content .home-right-side .char-stats-container .char-stats-content .char-stats-name-and-value-container .char-stats-name-and-value .char-stats-value {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 80vw;
 }
 
 .footer {
@@ -298,8 +265,13 @@
 }
 
 .footer .footer-content {
-  max-width: 90%;
+  max-width: 78%;
   margin: 0 auto;
+}
+
+.footer .footer-content .footer-copyright-text {
+  opacity: 1;
+  color: darkgray;
 }
 
 * {
