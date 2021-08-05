@@ -58,7 +58,7 @@ export default function GuildMemberData({
                             (member) => {
                                 return (
                                     <Link
-                                        href={`twitch.tv/dj_y4ssin`}
+                                        href={`https://na.finalfantasyxiv.com/lodestone/character/${member.ID}`}
                                         target="_blank"
                                         underline="none"
                                     >
@@ -78,9 +78,7 @@ export default function GuildMemberData({
                                                         classes.friendsListSecondaryStyling,
                                                 }}
                                                 primary={member.Name}
-                                                secondary={`Server: ${
-                                                    member.Server
-                                                } Rank: ${`https://xivapi.com/FreeCompanyMembers/${member.RankIcon}`}`}
+                                                secondary={`Rank: ${member.Rank}`}
                                             />
                                         </ListItem>
                                     </Link>
