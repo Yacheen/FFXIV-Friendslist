@@ -29,6 +29,7 @@ const useStyles = makeStyles({
 });
 
 export default function PersonMetaInformation({
+    onHome,
     FFXIVData,
     selectedMetaInformation,
     setSelectedMetaInformation,
@@ -73,7 +74,7 @@ export default function PersonMetaInformation({
         //do dis
     };
 
-    if (FFXIVData) {
+    if (FFXIVData && onHome == false) {
         return (
             <Card className={classes.root}>
                 <CardContent className="meta-info-top">

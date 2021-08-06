@@ -9,13 +9,13 @@ import SideBar from "./SideBar";
 import Attributes from "./Attributes";
 import Jobs from "./Jobs";
 
-export default function Home() {
+export default function Home({ onHome, setOnHome }) {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedMetaInformation, setSelectedMetaInformation] = useState();
     const [buttonPressed, setButtonPressed] = useState();
     const [FFXIVData, setFFXIVData] = useState(undefined);
     const [metaInfoLoading, setMetaInfoLoading] = useState(false);
-    const [onIntroScreen, setOnIntroScreen] = useState(true);
+
     const raidGroupIdentities = {
         rikkasId: 30071260,
         lirasId: 24633600,
@@ -34,6 +34,7 @@ export default function Home() {
             <Paper className="home-container" square>
                 <div className="sidebar-container">
                     <SideBar
+                        setOnHome={setOnHome}
                         setSelectedMetaInformation={setSelectedMetaInformation}
                         FFXIVData={FFXIVData}
                         setFFXIVData={setFFXIVData}
@@ -50,6 +51,7 @@ export default function Home() {
                             <div className="home-left-side-content">
                                 <div className="person-meta-information-container">
                                     <PersonMetaInformation
+                                        onHome={onHome}
                                         metaInfoLoading={metaInfoLoading}
                                         setMetaInfoLoading={setMetaInfoLoading}
                                         buttonPressed={buttonPressed}
@@ -66,6 +68,7 @@ export default function Home() {
                                 </div>
                                 <div className="person-data-container">
                                     <PersonData
+                                        onHome={onHome}
                                         setSelectedMetaInformation={
                                             setSelectedMetaInformation
                                         }
@@ -85,12 +88,21 @@ export default function Home() {
                         {/* right side of main content */}
                         <div className="home-right-side">
                             <div className="char-model-and-gear-container">
-                                <CharacterModel FFXIVData={FFXIVData} />
-                                <GearList FFXIVData={FFXIVData} />
+                                <CharacterModel
+                                    FFXIVData={FFXIVData}
+                                    onHome={onHome}
+                                />
+                                <GearList
+                                    FFXIVData={FFXIVData}
+                                    onHome={onHome}
+                                />
                             </div>
                             <div className="char-stats-container">
-                                <Jobs FFXIVData={FFXIVData} />
-                                <Attributes FFXIVData={FFXIVData} />
+                                <Jobs FFXIVData={FFXIVData} onHome={onHome} />
+                                <Attributes
+                                    FFXIVData={FFXIVData}
+                                    onHome={onHome}
+                                />
                             </div>
                         </div>
                     </div>

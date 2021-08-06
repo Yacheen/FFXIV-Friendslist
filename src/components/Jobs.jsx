@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Jobs({ FFXIVData }) {
+export default function Jobs({ FFXIVData, onHome }) {
     const classes = useStyles();
     const allowedJobs = ["Disciple of War", "Disciple of Magic"];
 
-    if (FFXIVData) {
+    if (FFXIVData && onHome == false) {
         return (
             <Paper className={classes.root}>
                 <Grid container spacing={1}>

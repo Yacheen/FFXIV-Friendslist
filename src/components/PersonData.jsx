@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PersonData({
+    onHome,
     setSelectedMetaInformation,
     selectedMetaInformation,
     FFXIVData,
@@ -57,7 +58,7 @@ export default function PersonData({
             </Card>
         );
     }
-    if (selectedMetaInformation) {
+    if (selectedMetaInformation && onHome == false) {
         if (buttonPressed === "FC") {
             return (
                 <GuildData

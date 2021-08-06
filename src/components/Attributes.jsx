@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Attributes({ FFXIVData }) {
+export default function Attributes({ FFXIVData, onHome }) {
     const classes = useStyles();
     const allowedAttributes = [
         "Vitality",
@@ -26,7 +26,7 @@ export default function Attributes({ FFXIVData }) {
         "Piety",
         "Tenacity",
     ];
-    if (FFXIVData) {
+    if (FFXIVData && onHome == false) {
         return (
             <Paper className={classes.root}>
                 <Grid container spacing={1}>

@@ -8,6 +8,7 @@ export default function GetStatusButton({
     selectedButton,
     setSelectedButton,
     setSelectedMetaInformation,
+    setOnHome,
 }) {
     const [isLoading, setIsLoading] = useState(false);
 
@@ -18,6 +19,8 @@ export default function GetStatusButton({
             `https://xivapi.com/character/${selectedIndex}?extended=1`
         );
         const data = await response.json();
+
+        setOnHome(false);
 
         setFFXIVData(data);
         setSelectedMetaInformation("");

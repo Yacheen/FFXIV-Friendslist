@@ -34,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function GearList({ FFXIVData }) {
+export default function GearList({ FFXIVData, onHome }) {
     const classes = useStyles();
 
-    if (FFXIVData) {
+    if (FFXIVData && onHome == false) {
         return (
             <List className={`${classes.root} gear-list`}>
                 {Object.values(FFXIVData.Character.GearSet.Gear).map(
@@ -83,33 +83,4 @@ export default function GearList({ FFXIVData }) {
     } else {
         return null;
     }
-
-    // return (
-    //   <List className={classes.root}>
-    //     <ListItem>
-    //       <ListItemAvatar>
-    //         <Avatar>
-    //           <ImageIcon />
-    //         </Avatar>
-    //       </ListItemAvatar>
-    //       <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-    //     </ListItem>
-    //     <ListItem>
-    //       <ListItemAvatar>
-    //         <Avatar>
-    //           <WorkIcon />
-    //         </Avatar>
-    //       </ListItemAvatar>
-    //       <ListItemText primary="Work" secondary="Jan 7, 2014" />
-    //     </ListItem>
-    //     <ListItem>
-    //       <ListItemAvatar>
-    //         <Avatar>
-    //           <BeachAccessIcon />
-    //         </Avatar>
-    //       </ListItemAvatar>
-    //       <ListItemText primary="Vacation" secondary="July 20, 2014" />
-    //     </ListItem>
-    //   </List>
-    // );
 }

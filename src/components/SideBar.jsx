@@ -11,6 +11,7 @@ export default function SideBar({
     raidGroupIdentities,
     setSelectedIndex,
     setSelectedMetaInformation,
+    setOnHome,
 }) {
     const [selectedButton, setSelectedButton] = useState(true);
 
@@ -19,6 +20,7 @@ export default function SideBar({
             <div className="side-bar-content">
                 <div className="get-status-button">
                     <GetStatusButton
+                        setOnHome={setOnHome}
                         setSelectedMetaInformation={setSelectedMetaInformation}
                         selectedButton={selectedButton}
                         setSelectedButton={setSelectedButton}
