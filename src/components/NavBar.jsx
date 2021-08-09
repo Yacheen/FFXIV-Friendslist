@@ -23,41 +23,24 @@ const useStyles = makeStyles({
 
 export default function NavBar() {
     const [onHome, setOnHome] = useState(true);
-    const [sidebarToggled, setSidebarToggled] = useState("sidebarUntoggled");
     const classes = useStyles();
     const navLinksMatches = useMediaQuery("(max-width: 1140px)");
 
+    gsap.fromTo(
+        ".nav-bar-content",
+        { opacity: 0 },
+        { opacity: 1, duration: 2 }
+    );
+
     const gotoHome = () => {
         setOnHome(true);
-    };
-    const toggleNavBurger = () => {
-        if (sidebarToggled === "sidebarToggled") {
-            setSidebarToggled("sidebarUntoggled");
-            gsap.to(".side-bar-container", {
-                duration: 0.4,
-                x: "-150%",
-                ease: "in",
-            });
-        } else {
-            setSidebarToggled("sidebarToggled");
-            gsap.to(".side-bar-container", {
-                duration: 0.4,
-                x: "0%",
-                ease: "in",
-            });
-        }
     };
 
     return (
         <Router>
             <Paper square elevation={3} className={`${classes.root} nav-bar`}>
                 <div className="nav-bar-content">
-                    <div
-                        className={`${sidebarToggled} nav-burger`}
-                        onClick={() => toggleNavBurger()}
-                    >
-                        <Burger sidebarToggled={sidebarToggled} />
-                    </div>
+                    <Burger />
 
                     <Link to="/" onClick={() => gotoHome()}>
                         <div className="nav-header">
@@ -99,11 +82,7 @@ export default function NavBar() {
                     exact
                     path="/"
                     render={() => (
-                        <Home
-                            onHome={onHome}
-                            setOnHome={setOnHome}
-                            sidebarToggled={sidebarToggled}
-                        />
+                        <Home onHome={onHome} setOnHome={setOnHome} />
                     )}
                 />
                 <Route exact path="/Motivation" component={Motivation} />

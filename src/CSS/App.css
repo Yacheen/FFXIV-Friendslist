@@ -230,9 +230,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-right: 2rem;
   max-height: 76rem;
 }
@@ -303,6 +303,19 @@ html {
 }
 
 @media only screen and (max-width: 1140px) {
+  .char-model-and-gear-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .char-model-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
   .nav-bar .nav-bar-content {
     margin: 2rem auto 2rem 1rem;
   }

@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     scroller: {
         maxHeight: "50vh",
         overflowY: "auto",
+        overflowX: "hidden",
     },
     friendsListPrimaryStyling: {
         color: theme.palette.primary.light,
@@ -53,7 +54,7 @@ export default function FriendsListData({
 
     if (selectedMetaInformation.Friends.length > 0) {
         return (
-            <Card className={classes.root}>
+            <Card className={`${classes.root}`}>
                 <Typography
                     variant="h3"
                     className="person-data-header"
@@ -64,7 +65,7 @@ export default function FriendsListData({
                 </Typography>
                 <CardContent className={classes.scroller}>
                     <Paper elevation={0}>
-                        <List className={classes.root}>
+                        <List className={`${classes.root}`}>
                             {selectedMetaInformation.Friends.map((Friend) => {
                                 return (
                                     <Link

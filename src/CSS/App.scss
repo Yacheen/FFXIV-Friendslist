@@ -41,6 +41,13 @@ html {
 
 //tablet view
 @media only screen and (max-width: 1140px) {
+    .char-model-and-gear-container {
+        justify-content: center;
+    }
+    .char-model-container {
+        display: flex;
+        justify-content: flex-start;
+    }
     .nav-bar {
         .nav-bar-content {
             margin: 2rem auto 2rem 1rem;

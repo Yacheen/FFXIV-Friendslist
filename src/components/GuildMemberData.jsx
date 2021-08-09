@@ -18,10 +18,9 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         width: 450,
         backgroundColor: theme.palette.background.paper,
-        overflowY: "auto",
     },
     scroller: {
-        overflowY: "scroll",
+        overflowY: "auto",
         overflowX: "hidden",
         maxHeight: "50vh",
     },
