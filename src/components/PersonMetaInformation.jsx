@@ -10,7 +10,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         width: 450,
         display: "block",
@@ -26,7 +26,12 @@ const useStyles = makeStyles({
     pos: {
         marginBottom: 12,
     },
-});
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+        },
+    },
+}));
 
 export default function PersonMetaInformation({
     onHome,
@@ -149,7 +154,7 @@ export default function PersonMetaInformation({
                         endIcon={<FavoriteIcon />}
                         disabled={metaInfoLoading}
                     >
-                        Friends List
+                        Friends
                     </Button>
                 </CardActions>
             </Card>

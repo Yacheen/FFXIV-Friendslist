@@ -6,9 +6,6 @@
     margin: 0 auto;
     display: flex;
 
-    .sidebar-container {
-    }
-
     .home-content-container {
         min-width: 80%;
 
@@ -47,7 +44,6 @@
 
                     .person-data-content {
                         max-height: 50vh;
-                        overflow: auto;
 
                         .person-data-header {
                             margin-bottom: 2rem;
@@ -96,7 +92,7 @@
                 //maybe add an accenting background color
                 .char-stats-container {
                     display: flex;
-                    justify-content: flex-end;
+                    justify-content: center;
                 }
             }
         }

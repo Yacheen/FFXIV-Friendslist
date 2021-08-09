@@ -22,6 +22,14 @@ function App() {
             contrastThreshold: 3,
             tonalOffset: 0.2,
         },
+
+        breakpoints: {
+            values: {
+                phone: 800,
+                tablet: 1140,
+                laptop: 1562,
+            },
+        },
     });
 
     return (

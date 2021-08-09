@@ -25,6 +25,16 @@ const useStyles = makeStyles((theme) => ({
     loadingTypography: {
         color: theme.palette.secondary.light,
     },
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            width: 350,
+        },
+    },
 }));
 
 export default function PersonData({

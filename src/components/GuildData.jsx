@@ -9,6 +9,7 @@ import {
     Paper,
     Grid,
     Tooltip,
+    Hidden,
 } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +49,18 @@ const useStyles = makeStyles((theme) => ({
     },
     focusContainerStyling: {
         padding: "2rem",
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+            height: 417,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            height: 375,
+            overflow: "hidden",
+        },
     },
 }));
 

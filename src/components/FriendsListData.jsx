@@ -21,9 +21,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     scroller: {
-        overflowY: "scroll",
-        overflowX: "hidden",
         maxHeight: "50vh",
+        overflowY: "auto",
     },
     friendsListPrimaryStyling: {
         color: theme.palette.primary.light,
@@ -31,6 +30,18 @@ const useStyles = makeStyles((theme) => ({
     },
     friendsListSecondaryStyling: {
         fontSize: 14,
+    },
+    //media queries
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+            height: 417,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            height: 375,
+        },
     },
 }));
 

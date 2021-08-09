@@ -17,3 +17,69 @@ body {
 html {
     font-size: 62.5%;
 }
+
+// media queries
+
+//laptop with hidpi (1440x900):
+//gearlist is styled with material ui usestyles
+@media only screen and (max-width: 1562px) {
+    //char model
+
+    .home-right-side {
+        .char-model-and-gear-container {
+            max-width: 90%;
+            height: 40rem;
+
+            .char-model-container {
+                .char-model {
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+}
+
+//tablet view
+@media only screen and (max-width: 1140px) {
+    .nav-bar {
+        .nav-bar-content {
+            margin: 2rem auto 2rem 1rem;
+            .nav-burger {
+                display: block;
+                padding-left: 2rem;
+            }
+        }
+    }
+
+    .side-bar-container {
+        position: absolute;
+        z-index: 2;
+        transform: translateX(-150%);
+    }
+    .home-container {
+        display: flex;
+
+        .home-content-container {
+            display: flex;
+            justify-content: center;
+            min-width: 100%;
+            .home-content {
+                flex-direction: column;
+                margin: 2rem auto;
+                .home-left-side {
+                    height: 50vh;
+                    .home-left-side-content {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+                .home-right-side {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+//mobile view
+@media only screen and (max-width: 700px) {
+}

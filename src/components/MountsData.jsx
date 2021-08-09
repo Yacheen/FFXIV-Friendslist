@@ -14,6 +14,7 @@ import {
 const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
+        overflowY: "auto",
     },
     gridRoot: {
         flexGrow: 1,
@@ -25,6 +26,17 @@ const useStyles = makeStyles((theme) => ({
     tooltip: {
         color: "primary",
         fontSize: 20,
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+            height: 417,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            height: 370,
+        },
     },
 }));
 

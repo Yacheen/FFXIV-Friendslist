@@ -32,6 +32,29 @@ const useStyles = makeStyles((theme) => ({
         color: "white",
         fontSize: 10,
     },
+
+    //media query
+
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: "60%",
+            maxWidth: 180,
+        },
+        image: {
+            maxWidth: "60%",
+        },
+        primaryStyling: {
+            fontSize: 12,
+        },
+        secondaryStyling: {
+            fontSize: 9,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            maxWidth: 250,
+        },
+    },
 }));
 
 export default function GearList({ FFXIVData, onHome }) {

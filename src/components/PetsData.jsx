@@ -13,6 +13,7 @@ import {
 const useStyles = makeStyles((theme) => ({
     root: {
         minWidth: 275,
+        overflowY: "auto",
     },
     gridRoot: {
         flexGrow: 1,
@@ -23,6 +24,17 @@ const useStyles = makeStyles((theme) => ({
     },
     tooltip: {
         fontSize: 20,
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
+        root: {
+            width: 350,
+            height: 417,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
+        root: {
+            height: 375,
+        },
     },
 }));
 
@@ -43,7 +55,7 @@ export default function PetsData({ selectedMetaInformation }) {
                     <div className="person-data-mounts">
                         <Paper
                             className={`${classes.paper} person-data-mounts-content`}
-                            elevation={3}
+                            elevation={0}
                         >
                             {selectedMetaInformation.Minions.map(
                                 (mountInfo) => {
