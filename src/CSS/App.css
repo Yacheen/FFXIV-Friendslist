@@ -301,6 +301,10 @@
   color: darkgray;
 }
 
+.footer .footer-content .footer-social-links {
+  display: inline-block;
+}
+
 * {
   margin: 0;
   padding: 0;
