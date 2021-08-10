@@ -1,8 +1,5 @@
-.MuiTooltip-popperInteractive {
-    color: blue;
-    font-size: 1.4rem;
-}
 .home-container {
+    overflow: hidden;
     margin: 0 auto;
     display: flex;
 
@@ -99,9 +96,32 @@
     }
 }
 .intro-page {
+    position: relative;
     display: flex;
-    justify-content: center;
-    width: 80vw;
-    .intro-card {
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(-4.5%, -3%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 110vh;
+        width: 100vw;
+        opacity: 0.04;
+        background-image: url("../Images/titanegi.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .intro-text {
+        background-color: rgba(0, 0, 0, 0.1);
+        transform: translate(50%, 350%);
+        position: absolute;
+        z-index: 5;
     }
 }

@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import React from "react";
+import React, { useState } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";
@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         width: 450,
         display: "block",
+    },
+    introTextStyling: {
+        fontWeight: "200",
     },
     bullet: {
         display: "inline-block",
@@ -162,14 +165,16 @@ export default function PersonMetaInformation({
     } else {
         return (
             <section className="intro-page">
-                <Card className="intro-card" raised={true}>
-                    <CardContent>
-                        <Typography variant="h3" align="center">
-                            Choose a player, then click on view profile to get
-                            started
-                        </Typography>
-                    </CardContent>
-                </Card>
+                <Typography variant="h2" align="left" className="intro-text">
+                    <strong>FFXIV Friendslist</strong>
+                    <Typography
+                        variant="h3"
+                        align="left"
+                        classes={{ root: classes.introTextStyling }}
+                    >
+                        Select someone to view their profile
+                    </Typography>
+                </Typography>
             </section>
         );
     }
