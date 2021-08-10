@@ -56,6 +56,9 @@ export default function PersonMetaInformation({
 }) {
     const classes = useStyles();
 
+    const introtextMatchesTablet = useMediaQuery("(max-width: 1140px)");
+    const introtextMatchesPhone = useMediaQuery("(max-width: 740px)");
+
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     };
@@ -174,13 +177,24 @@ export default function PersonMetaInformation({
             <section className="intro-page">
                 <Typography variant="h2" align="left" className="intro-text">
                     <strong>FFXIV Friendslist</strong>
-                    <Typography
-                        variant="h3"
-                        align="left"
-                        classes={{ root: classes.introTextStyling }}
-                    >
-                        Select someone to view their profile
-                    </Typography>
+                    {introtextMatchesTablet || introtextMatchesPhone ? (
+                        <Typography
+                            variant="h3"
+                            align="left"
+                            classes={{ root: classes.introTextStyling }}
+                        >
+                            Select someone by tapping the menu on the left to
+                            get started~
+                        </Typography>
+                    ) : (
+                        <Typography
+                            variant="h3"
+                            align="left"
+                            classes={{ root: classes.introTextStyling }}
+                        >
+                            Select someone to view their profile!
+                        </Typography>
+                    )}
                 </Typography>
             </section>
         );

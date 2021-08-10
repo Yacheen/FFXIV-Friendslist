@@ -23,6 +23,15 @@ html {
 //gearlist is styled with material ui usestyles
 @media only screen and (max-width: 1562px) {
     //char model
+    .intro-page {
+        &::before {
+            height: 117vh;
+            width: 117vw;
+        }
+        .intro-text {
+            transform: translate(30%, 150%);
+        }
+    }
 
     .home-right-side {
         .char-model-and-gear-container {
@@ -40,6 +49,14 @@ html {
 
 //tablet view
 @media only screen and (max-width: 1140px) {
+    .intro-page {
+        &::before {
+            display: none;
+        }
+        .intro-text {
+            transform: translate(30%, 150%);
+        }
+    }
     .char-model-and-gear-container {
         justify-content: center;
     }
@@ -89,7 +106,14 @@ html {
 //mobile view
 @media only screen and (max-width: 700px) {
     //navbar
-
+    .intro-page {
+        &::before {
+            display: none;
+        }
+        .intro-text {
+            transform: translate(5%, 50%);
+        }
+    }
     //personmetainfo and persondata
     .person-meta-information-container {
         margin-bottom: 4rem !important;

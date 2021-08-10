@@ -7,14 +7,13 @@ import {
 } from "@material-ui/core";
 import ForumIcon from "@material-ui/icons/Forum";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 import Home from "./Home";
 import Motivation from "./Motivation";
 import Burger from "./Burger";
 import { gsap } from "gsap";
-import ffxivIcon from "../Images/moogleclock.png";
 
 const useStyles = makeStyles({
     root: {
@@ -71,11 +70,7 @@ export default function NavBar() {
                                 )}
                             </Button>
                         </Link>
-                        <Link
-                            to="/Contact"
-                            className="nav-button-link"
-                            href="#Contact"
-                        >
+                        <Link className="nav-button-link">
                             <Button className="nav-button" color="secondary">
                                 <ForumIcon fontSize="large" />
                                 {navLinksMatchesTablet ? null : (
