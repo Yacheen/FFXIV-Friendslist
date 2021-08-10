@@ -89,4 +89,39 @@ html {
 }
 //mobile view
 @media only screen and (max-width: 700px) {
+    //navbar
+
+    //personmetainfo and persondata
+    .person-meta-information-container {
+        margin-bottom: 4rem !important;
+    }
+    .home-left-side {
+        min-height: 90rem;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .home-left-side-content {
+        display: flex;
+        flex-direction: column;
+        min-height: 50rem;
+        justify-content: flex-start !important;
+    }
+
+    //charmodel gearlist stats and jobs
+    .home-right-side {
+        min-height: 100rem;
+        .char-model-and-gear-container {
+            min-height: 60vh;
+            .char-model-container {
+                margin-right: 0rem !important;
+                max-height: 35rem !important;
+            }
+        }
+        .char-stats-container {
+            margin-bottom: 20rem;
+            min-height: 50rem;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }

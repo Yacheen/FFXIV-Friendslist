@@ -25,7 +25,7 @@ function App() {
 
         breakpoints: {
             values: {
-                phone: 800,
+                phone: 740,
                 tablet: 1140,
                 laptop: 1562,
             },

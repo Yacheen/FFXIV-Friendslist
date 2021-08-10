@@ -14,17 +14,22 @@ import Home from "./Home";
 import Motivation from "./Motivation";
 import Burger from "./Burger";
 import { gsap } from "gsap";
+import ffxivIcon from "../Images/moogleclock.png";
 
 const useStyles = makeStyles({
     root: {
         minHeight: "8vh",
+    },
+    headerImage: {
+        maxWidth: "20%",
     },
 });
 
 export default function NavBar() {
     const [onHome, setOnHome] = useState(true);
     const classes = useStyles();
-    const navLinksMatches = useMediaQuery("(max-width: 1140px)");
+    const navLinksMatchesTablet = useMediaQuery("(max-width: 1140px)");
+    const navLinksMatchesPhone = useMediaQuery("(max-width: 740px)");
 
     gsap.fromTo(
         ".nav-bar-content",
@@ -44,16 +49,22 @@ export default function NavBar() {
 
                     <Link to="/" onClick={() => gotoHome()}>
                         <div className="nav-header">
-                            <Typography variant="h3">
-                                FFXIV Friendslist
-                            </Typography>
+                            {navLinksMatchesPhone ? (
+                                <Typography variant="h4" align="center">
+                                    FFXIV Friendslist
+                                </Typography>
+                            ) : (
+                                <Typography variant="h3" align="center">
+                                    FFXIV Friendslist
+                                </Typography>
+                            )}
                         </div>
                     </Link>
                     <div className="nav-buttons">
                         <Link to="/Motivation" className="nav-button-link">
                             <Button className="nav-button" color="primary">
                                 <HelpOutlineIcon fontSize="large" />{" "}
-                                {navLinksMatches ? null : (
+                                {navLinksMatchesTablet ? null : (
                                     <span className="nav-button-text">
                                         About
                                     </span>
@@ -67,7 +78,7 @@ export default function NavBar() {
                         >
                             <Button className="nav-button" color="secondary">
                                 <ForumIcon fontSize="large" />
-                                {navLinksMatches ? null : (
+                                {navLinksMatchesTablet ? null : (
                                     <span className="nav-button-text">
                                         Contact
                                     </span>

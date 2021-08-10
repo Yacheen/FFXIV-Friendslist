@@ -62,6 +62,12 @@ const useStyles = makeStyles((theme) => ({
             overflow: "hidden",
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            width: 300,
+            minHeight: 575,
+        },
+    },
 }));
 
 export default function GuildData({

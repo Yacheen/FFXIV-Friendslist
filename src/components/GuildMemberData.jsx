@@ -41,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
             height: 375,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            height: 375,
+            width: 300,
+        },
+    },
 }));
 
 export default function GuildMemberData({

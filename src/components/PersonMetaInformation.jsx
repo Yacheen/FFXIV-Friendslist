@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";
+import { useMediaQuery } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -34,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
             width: 350,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            width: 300,
+        },
+    },
 }));
 
 export default function PersonMetaInformation({
@@ -48,6 +54,7 @@ export default function PersonMetaInformation({
     setMetaInfoLoading,
 }) {
     const classes = useStyles();
+    const buttonOnPhone = useMediaQuery("(max-width: 740px)");
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);

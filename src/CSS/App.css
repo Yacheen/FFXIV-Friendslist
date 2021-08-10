@@ -390,4 +390,53 @@ html {
             justify-content: center;
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .person-meta-information-container {
+    margin-bottom: 4rem !important;
+  }
+  .home-left-side {
+    min-height: 90rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .home-left-side-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: 50rem;
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+            justify-content: flex-start !important;
+  }
+  .home-right-side {
+    min-height: 100rem;
+  }
+  .home-right-side .char-model-and-gear-container {
+    min-height: 60vh;
+  }
+  .home-right-side .char-model-and-gear-container .char-model-container {
+    margin-right: 0rem !important;
+    max-height: 35rem !important;
+  }
+  .home-right-side .char-stats-container {
+    margin-bottom: 20rem;
+    min-height: 50rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
 /*# sourceMappingURL=App.css.map */

@@ -10,6 +10,7 @@ import PetsData from "./PetsData";
 import FriendsListData from "./FriendsListData";
 import GuildData from "./GuildData";
 import GuildMemberData from "./GuildMemberData";
+import loadingGif from "../Images/loadingGif.gif";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     loadingTypography: {
         color: theme.palette.secondary.light,
     },
+    loadingGif: {
+        maxWidth: "8%",
+    },
     [theme.breakpoints.down(theme.breakpoints.values.laptop)]: {
         root: {
             width: 350,
@@ -33,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(theme.breakpoints.values.tablet)]: {
         root: {
             width: 350,
+        },
+    },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            width: 300,
         },
     },
 }));
@@ -53,14 +62,18 @@ export default function PersonData({
             <Card className={classes.root}>
                 <CardContent className={`person-data-loading`}>
                     <Typography variant="h4" color="secondary">
-                        Loading...
-                        <br /> <br />
+                        Loading.. <br /> <br />
                         <Typography
                             variant="h5"
                             classes={{ h5: classes.loadingTypography }}
                         >
                             Hint: <br /> Friends List may take a tiny bit
                             longer..
+                            <img
+                                className={classes.loadingGif}
+                                src={loadingGif}
+                                alt={`loading icon`}
+                            />
                         </Typography>
                     </Typography>
                 </CardContent>

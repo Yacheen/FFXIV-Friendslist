@@ -55,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
             maxWidth: 250,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            minWidth: 150,
+        },
+    },
 }));
 
 export default function GearList({ FFXIVData, onHome }) {
