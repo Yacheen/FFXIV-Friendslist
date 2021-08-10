@@ -44,6 +44,11 @@ const useStyles = makeStyles((theme) => ({
             height: 375,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            width: 300,
+        },
+    },
 }));
 
 export default function FriendsListData({

@@ -50,6 +50,14 @@ const useStyles = makeStyles((theme) => ({
             fontSize: 12,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            marginRight: 0,
+            maxWidth: 275,
+            maxHeight: 300,
+            marginBottom: "4rem",
+        },
+    },
 }));
 
 export default function Jobs({ FFXIVData, onHome }) {
@@ -67,9 +75,13 @@ export default function Jobs({ FFXIVData, onHome }) {
                                 classJob.Job.ClassJobCategory.Name
                             )
                         ) {
+                            let nameWithNoSpace = classJob.Job.Name.replace(
+                                /\s/g,
+                                ""
+                            );
                             return (
                                 <Link
-                                    href={`https://na.finalfantasyxiv.com/jobguide/${classJob.Job.Name}`}
+                                    href={`https://na.finalfantasyxiv.com/jobguide/${nameWithNoSpace}`}
                                     underline="none"
                                     target="_blank"
                                 >

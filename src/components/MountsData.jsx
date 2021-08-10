@@ -38,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
             height: 370,
         },
     },
+    [theme.breakpoints.down(theme.breakpoints.values.phone)]: {
+        root: {
+            width: 300,
+        },
+    },
 }));
 
 export default function MountsData({ selectedMetaInformation, selectedIndex }) {

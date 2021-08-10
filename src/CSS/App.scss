@@ -98,7 +98,7 @@ html {
     .home-left-side {
         min-height: 90rem;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
     }
     .home-left-side-content {
         display: flex;
@@ -112,15 +112,17 @@ html {
         min-height: 100rem;
         .char-model-and-gear-container {
             min-height: 60vh;
+
             .char-model-container {
                 margin-right: 0rem !important;
                 max-height: 35rem !important;
             }
         }
         .char-stats-container {
-            margin-bottom: 20rem;
+            margin-bottom: 10rem;
             min-height: 50rem;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
     }

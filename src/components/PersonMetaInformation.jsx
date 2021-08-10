@@ -5,11 +5,12 @@ import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PetsIcon from "@material-ui/icons/Pets";
 import FlightIcon from "@material-ui/icons/Flight";
 import { useMediaQuery } from "@material-ui/core";
+import { gsap } from "gsap";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +55,6 @@ export default function PersonMetaInformation({
     setMetaInfoLoading,
 }) {
     const classes = useStyles();
-    const buttonOnPhone = useMediaQuery("(max-width: 740px)");
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
