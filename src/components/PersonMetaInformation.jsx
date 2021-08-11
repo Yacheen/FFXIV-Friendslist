@@ -184,7 +184,7 @@ export default function PersonMetaInformation({
                             classes={{ root: classes.introTextStyling }}
                         >
                             Select someone by tapping the menu on the left to
-                            get started~
+                            get started
                         </Typography>
                     ) : (
                         <Typography
@@ -192,7 +192,7 @@ export default function PersonMetaInformation({
                             align="left"
                             classes={{ root: classes.introTextStyling }}
                         >
-                            Select someone to view their profile!
+                            Select someone to view their profile
                         </Typography>
                     )}
                 </Typography>

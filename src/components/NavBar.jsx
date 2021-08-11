@@ -70,7 +70,11 @@ export default function NavBar() {
                                 )}
                             </Button>
                         </Link>
-                        <Link className="nav-button-link">
+                        <a
+                            className="nav-button-link"
+                            href="mailto:yassinmoussaouibusiness@gmail.com"
+                            target="_blank"
+                        >
                             <Button className="nav-button" color="secondary">
                                 <ForumIcon fontSize="large" />
                                 {navLinksMatchesTablet ? null : (
@@ -79,7 +83,7 @@ export default function NavBar() {
                                     </span>
                                 )}
                             </Button>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </Paper>

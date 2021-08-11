@@ -367,8 +367,8 @@ html {
     display: none;
   }
   .intro-page .intro-text {
-    -webkit-transform: translate(30%, 150%);
-            transform: translate(30%, 150%);
+    -webkit-transform: translate(5%, 150%);
+            transform: translate(5%, 150%);
   }
   .char-model-and-gear-container {
     -webkit-box-pack: center;
