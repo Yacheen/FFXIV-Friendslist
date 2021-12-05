@@ -56,36 +56,6 @@ export default function Motivation() {
                     <br />
                 </Typography>
 
-                <Typography variant="h4" align="left">
-                    Plans for continuous development involve adding new features
-                    <br />
-                    <br /> One example of a feature I planned to be added in the
-                    future is a page where
-                    <br /> the user is able to view prices of popular items on
-                    different servers without <br />
-                    having to perform a tedious process of:
-                    <Typography
-                        variant="h4"
-                        className={`${classes.ulIndent} ${classes.secondaryStyling}`}
-                    >
-                        - opening up FFXIV <br />- waiting for it to load <br />
-                        - waiting in queue to login <br />- hopping from world
-                        to world to check prices <br />- then memorizing each
-                        world,
-                    </Typography>
-                    <br />
-                    When instead you could just check here!
-                    <br />
-                    <br />
-                    <br />
-                </Typography>
-                <Typography variant="h3" align="left">
-                    <i>
-                        If interested in making a project together,
-                        <br /> feel free to contact me with one of the links
-                        below
-                    </i>
-                </Typography>
             </CardContent>
         </Card>
     );
