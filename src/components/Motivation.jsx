@@ -28,7 +28,7 @@ export default function Motivation() {
     const classes = useStyles();
 
     return (
-        <Card square className={`${classes.actualRoot}`}>
+        <Card square className={`${classes.actualRoot} about-section`}>
             <CardContent className={`${classes.root} about-content`}>
                 <Typography
                     variant="h3"

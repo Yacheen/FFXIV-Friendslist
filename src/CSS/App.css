@@ -493,4 +493,8 @@ html {
             align-items: center;
   }
 }
+
+.about-section {
+  min-height: 80vh;
+}
 /*# sourceMappingURL=App.css.map */
