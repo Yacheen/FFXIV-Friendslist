@@ -69,13 +69,10 @@ export default function Jobs({ FFXIVData, onHome }) {
         return (
             <Paper className={classes.root}>
                 <Grid container spacing={1} className={classes.JobsStyling}>
-                    {FFXIVData.Character.ClassJobs.map((classJob) => {
-                        if (
-                            allowedJobs.includes(
-                                classJob.Job.ClassJobCategory.Name
-                            )
-                        ) {
-                            let nameWithNoSpace = classJob.Job.Name.replace(
+                    
+                    {FFXIVData?.Character?.ClassJobs?.map((classJob) => {
+                        if (allowedJobs.includes(classJob?.Job?.ClassJobCategory?.Name)) {
+                            let nameWithNoSpace = classJob?.Job?.Name?.replace(
                                 /\s/g,
                                 ""
                             );

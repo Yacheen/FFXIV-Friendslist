@@ -48,48 +48,57 @@ const useStyles = makeStyles((theme) => ({
 export default function MountsData({ selectedMetaInformation, selectedIndex }) {
     const classes = useStyles();
     if (selectedMetaInformation) {
-        return (
-            <Card className={classes.root}>
-                <Typography
-                    variant="h3"
-                    className="person-data-header"
-                    color="primary"
-                    align="center"
-                >
-                    Mounts
-                </Typography>
-                <CardContent className="person-data-content">
-                    <div className="person-data-mounts">
-                        <Paper
-                            className={`${classes.paper} person-data-mounts-content`}
-                            elevation={0}
-                        >
-                            {selectedMetaInformation.Mounts.map((mountInfo) => {
-                                return (
-                                    <Grid container spacing={2}>
-                                        <Grid container={true} item xs={1}>
-                                            <Tooltip
-                                                classes={{
-                                                    tooltip: classes.tooltip,
-                                                }}
-                                                arrow={true}
-                                                title={`${mountInfo.Name}`}
-                                                placement="top"
-                                            >
-                                                <img
-                                                    src={mountInfo.Icon}
-                                                    alt={mountInfo.Name}
-                                                />
-                                            </Tooltip>
+        if(selectedMetaInformation?.Mounts) {
+            return (
+                <Card className={classes.root}>
+                    <Typography
+                        variant="h3"
+                        className="person-data-header"
+                        color="primary"
+                        align="center"
+                    >
+                        Mounts
+                    </Typography>
+                    <CardContent className="person-data-content">
+                        <div className="person-data-mounts">
+                            <Paper
+                                className={`${classes.paper} person-data-mounts-content`}
+                                elevation={0}
+                            >
+                                {selectedMetaInformation?.Mounts?.map((mountInfo) => {
+                                    return (
+                                        <Grid container spacing={2}>
+                                            <Grid container={true} item xs={1}>
+                                                <Tooltip
+                                                    classes={{
+                                                        tooltip: classes.tooltip,
+                                                    }}
+                                                    arrow={true}
+                                                    title={`${mountInfo?.Name}`}
+                                                    placement="top"
+                                                >
+                                                    <img
+                                                        src={mountInfo?.Icon}
+                                                        alt={mountInfo?.Name}
+                                                    />
+                                                </Tooltip>
+                                            </Grid>
                                         </Grid>
-                                    </Grid>
-                                );
-                            })}
-                        </Paper>
-                    </div>
-                </CardContent>
-                <CardActions></CardActions>
-            </Card>
-        );
+                                    );
+                                })}
+                            </Paper>
+                        </div>
+                    </CardContent>
+                    <CardActions></CardActions>
+                </Card>
+            );
+
+        }
+        else {
+            return (
+                <h1>Mounts appear to not be working <br/> at the moment due to <br/> new expansion released Dec. 2nd </h1>
+            )
+        }
+        
     }
 }

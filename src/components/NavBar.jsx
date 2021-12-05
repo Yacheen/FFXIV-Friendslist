@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import ForumIcon from "@material-ui/icons/Forum";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 
 import Home from "./Home";
@@ -74,6 +74,7 @@ export default function NavBar() {
                             className="nav-button-link"
                             href="mailto:yassinmoussaouibusiness@gmail.com"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             <Button className="nav-button" color="secondary">
                                 <ForumIcon fontSize="large" />

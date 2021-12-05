@@ -60,7 +60,7 @@ export default function PersonMetaInformation({
     const introtextMatchesPhone = useMediaQuery("(max-width: 740px)");
 
     const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+        return string?.charAt(0)?.toUpperCase() + string?.slice(1);
     };
 
     const fetchSelectedData = async (buttonClicked, characterId) => {
@@ -102,10 +102,10 @@ export default function PersonMetaInformation({
                     <Typography className="job-info" noWrap={true} variant="h4">
                         Class:{" "}
                         {capitalizeFirstLetter(
-                            FFXIVData.Character.ActiveClassJob.Job.Name
+                            FFXIVData?.Character?.ActiveClassJob?.Job?.Name
                         )}
                         <img
-                            src={`https://xivapi.com${FFXIVData.Character.ActiveClassJob.Job.Icon}`}
+                            src={`https://xivapi.com${FFXIVData?.Character?.ActiveClassJob?.Job?.Icon}`}
                             alt={`class icon`}
                         />
                     </Typography>
